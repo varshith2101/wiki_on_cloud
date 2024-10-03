@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animated Page</title>
+    <link href="https://fonts.googleapis.com/css2?family=Titan+One&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            background-color: #899464;
+            color: #213129;
+        }
+        #menu-icon {
+            position: fixed;
+            top: 1.852vh;
+            right: 1.042vw;
+            z-index: 1001;
+            cursor: pointer;
+            width: 1.563vw;
+            height: 2.315vh;
+        }
+        .line {
+            position: absolute;
+            width: 100%;
+            height: 0.278vh;
+            background-color: #213129;
+            transition: 0.6s;
+        }
+        .line:nth-child(1) { top: 0; }
+        .line:nth-child(2) { top: 50%; transform: translateY(-50%); }
+        .line:nth-child(3) { bottom: 0; }
+        #menu-icon.active .line:nth-child(1) { transform: translateY(1.019vh) rotate(45deg); }
+        #menu-icon.active .line:nth-child(2) { opacity: 0; }
+        #menu-icon.active .line:nth-child(3) { transform: translateY(-1.019vh) rotate(-45deg); }
+        #navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(4vw);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            clip-path: circle(0% at 100% 0);
+            transition: clip-path 1s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            transition: all 1s;
+        }
+        #navbar.active {
+            clip-path: circle(150% at 100% 0);
+            transition: all 1s;
+        }
+        .nav-item {
+            font-size: 1.25vw;
+            font-weight: bold;
+            margin: 0.926vh 0;
+            cursor: pointer;
+            position: relative;
+            text-align: center;
+            color: #213129;
+            opacity: 0;
+            transform: translateY(1.852vh);
+        }
+        .dropdown {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out, opacity 0.3s ease-out, margin 0.3s ease-out;
+            opacity: 0;
+            margin-top: 0;
+        }
+        .dropdown p {
+            font-size: 1.9vh;
+            font-weight: normal;
+            margin: 0.463vh 0;
+            transition: color 0.3s ease;
+            opacity: 0.;
+        }
+        .dropdown p a{
+            text-decoration: none;
+            color: #213129;
+        }
+        .dropdown p:hover {
+            font-size: 2vh;
+        }
+        .nav-item:hover .dropdown {
+            max-height: 46.296vh;
+            opacity: 1;
+            margin-top: 0.926vh;
+        }
+        #content {                                                        /*  karan contributed */
+            padding: 1.852vh 1.042vw;
+            background-color: #899464;
+            color: #213129;
+            text-align: center;
+            max-width: 41.667vw;
+            margin: 0 auto;
+        }
+        .theCanvas{
+            width: 100%;
+            overflow: hidden;
+            z-index: 1;
+            background-color: #F8F5EE;
+            height: 100vh;
+        }
+        .anim{
+            max-width: 100vw;
+            max-height: 100vh;
+            display: block;
+            transition: all 1s;
+            z-index: 5;
+            position: absolute;
+        }
+
+        .myFooter {
+            background-color: #899464;
+            color: white;
+            text-align: center;
+            position: relative;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 10;
+            height: 40vh;
+        }
+
+        .footer-content {
+            display: flex;
+            align-items: center;
+            height: 100%;
+        }
+        .footer-section {
+            flex: 1;
+            padding: 0.833vw;
+        }
+        
+        .sponsors-grid {
+            display: flex;
+            width: 40vw;
+            flex-wrap: wrap;
+
+            .sponsors-grid .grid-item {
+                flex: 1 1 calc(33.33% - 0.833vw);
+                margin-bottom: 0.833vw;
+            }
+
+            .sponsors-grid .grid-item:nth-child(4) {
+                flex: 1 1 100%;
+            }
+        }
+        .sponsors-grid img {
+            width: 17vw;
+            height: auto;
+            position: relative;
+        }
+        .footer-divider {
+            width: 0.052vw;
+            background-color: #213129;
+            height: 80%;
+        }
+        .contact {
+            text-align: left;
+            padding-bottom: 4vh;
+        }
+        .last-one {
+            display: block;
+            position: absolute;
+            justify-content: center;
+            align-items: center;
+            padding: 0;
+            margin: 0;
+            background-color: #3D4A2D;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="theCanvas">
+        <canvas class="anim"></canvas>
+    </div>
+    <div id="menu-icon">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+    </div>
+    <nav id="navbar">
+        <img style="float: left;width: 20vw;height: auto;position: fixed;margin-bottom: 60vh;" src="images/CAAPI.png" alt="">
+        <div class="nav-item" style="margin-top: 30vh;">
+            Project
+            <div class="dropdown">
+                <!-- Change all Hrefs in the home page nav bar, dont change any other pages navbar yet -->
+                <p><a href="Description----/description.html">Description</a></p> 
+                <p><a href="#">Background</a></p>
+                <p><a href="#">Design</a></p>
+                <p><a href="#">Proof of Concept</a></p>
+                <p><a href="#">Implementation</a></p>
+                <p><a href="#">Biosafety</a></p>
+                <p><a href="#">Contribution</a></p>
+            </div>
+        </div>
+        <div class="nav-item">
+            Wet Lab
+            <div class="dropdown">
+                <p><a href="#">Engineering</a></p>
+                <p><a href="#">Materials</a></p>
+                <p><a href="#">Notebook</a></p>
+                <p><a href="#">Protocols</a></p>
+                <p><a href="#">Measurement</a></p>
+                <p><a href="#">Lab Safety</a></p>
+            </div>
+        </div>
+        <div class="nav-item">
+            Dry Lab
+            <div class="dropdown">
+                <p><a href="#">Modelling</a></p>
+                <p><a href="#">Parts</a></p>
+            </div>
+        </div>
+        <div class="nav-item">
+            <a style="text-decoration: none;color: #213129;" href="#">Software</a>
+        </div>
+        <div class="nav-item">
+            Human Practices
+            <div class="dropdown">
+                <p><a href="#">iHP</a></p>
+                <p><a href="#">Outreach & Collaboration</a></p>
+            </div>
+        </div>
+        <div class="nav-item">
+            <a style="text-decoration: none;color: #213129;" href="#">Education</a>
+        </div>
+        <div class="nav-item">
+            Team
+            <div class="dropdown">
+                <p><a href="#">Meet the Team</a></p>
+                <p><a href="#">Attributions</a></p>
+                <p><a href="#">Medals</a></p>
+            </div>
+        </div>
+       
+    </nav>
+    <footer class="myFooter">
+        <div class="footer-content">
+            <div class="footer-section sponsors">
+                <h2 style="color: #213129;font-size: 6vh;margin: 0;padding-bottom: 1vh;font-family: 'Titan One', cursive;">Sponsors</h2>
+                <div class="sponsors-grid" style="padding-left: 5vw;">
+                    <img class="grid-item" style="height:11vh; width: auto; padding-left: 1vw;" src="images/topleft.png" alt="Sponsor 1">
+                    <img class="grid-item" style="height:10vh; width: auto;padding-right: 3vw;padding-top: 2vh;" src="images/manipal.png" alt="Sponsor 2">
+                    <img class="grid-item" style="height:7vh; width: auto;padding-left: 3vw;padding-top: 2vh;" src="images/right_bottom.png" alt="Sponsor 3">
+                    <img class="grid-item" style="height:4vh; width: auto;padding-top: 4vh;padding-right: 0vw;padding-left: 2vw;" src="images/left_bottom.png" alt="Sponsor 4">
+                    <img class="grid-item" style="height:6vh; width: auto;padding-top: 2.5vh;padding-right: 1vw;padding-left: 1vw;" src="images/images-removebg-preview.png" alt="Sponsor 4">
+                </div>
+            </div>
+            <div class="footer-divider"></div>
+            <div class="footer-section contact" style="color: #213129;margin-left: 5vw;">
+                <h2 style="font-size: 6vh;margin-bottom: 0;font-family: 'Titan One', cursive;">Contact Us</h2>
+                <div style="display: flex; justify-content: space-between; align-items: center;margin-left: 1vw;">
+                    <div style="width: 20vw;">
+                        <p style="font-size: 1.8vh;margin-top: 0;"><strong>Email:</strong> manipalbiomachines.igem@gmail.com</p>
+                        <p style="font-size: 1.8vh;"><strong>Address:</strong> <br>Project laboratory, Academic Block-2, Manipal Institute of Technology, MAHE, Eshwar Nagar, Manipal, Udupi, Karnataka, India - 576104 </p>
+                    </div>
+                </div>
+            </div>
+            <img style="width: 15vw; height: auto;margin-right: 7vw;" src="images/iGEM MIT-MAHE Logo.png" alt="iGEM MIT">
+
+        </div>
+        <div class="last-one">
+            &copy; 2024- Content on this site is licensed under a Creative Commons Attribution 4.0 International license.
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+    <script>
+        const canvas = document.querySelector(".anim");
+        const context = canvas.getContext("2d"); 
+
+        const pinSpacer = document.querySelector(".pin-spacer");
+        const outerDiv = document.querySelector(".theCanvas");
+
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        const basePath = 'animation/PNG_0';
+    const numberOfImages = 593;  //change depending on the video 
+    const imagePaths = [];
+
+    const renderingWidth = 100;
+    const renderingHeight = 100;
+
+    function vwToPx(vw) {
+        const px = (vw / 100) * window.innerWidth;
+        return px;
+    }
+
+    function vhToPx(vh) {
+        const px = (vh / 100) * window.innerHeight;
+        return px;
+    }
+
+    const renderingWidthRES = vwToPx(renderingWidth);
+    const renderingHeightRES = vhToPx(renderingHeight);
+
+    function formatNumber(number, width) {
+        let numberStr = number.toString();
+        while (numberStr.length < width) {
+            numberStr = '0' + numberStr;
+        }
+        return numberStr;  // so if the number was 1 -> 001, 12 -> 012 ,  width changes at call
+    }
+
+    for (let i = 1; i <= numberOfImages; i++) {
+        const formattedNumber = formatNumber(i, 3);
+        const imagePath = `${basePath}${formattedNumber}.png`; //merging base path with the number and extention
+        imagePaths.push(imagePath); //appending to array
+    }
+
+    function renderFrame(frameIndex) {
+        const img = new Image();  //image object itseems : )
+        img.src = imagePaths[frameIndex]; // that easy, setting the source using a string that holds path
+
+        img.onload = function() {
+            context.clearRect(0, 0, canvas.width, canvas.height);
+            const xOffset = (canvas.width - renderingWidthRES) / 2;
+            const yOffset = (canvas.height - renderingHeightRES) / 2;
+    
+            // Draw the image on the canvas with specified dimensions
+            context.drawImage(img, xOffset, yOffset, renderingWidthRES, renderingHeightRES);
+        };
+
+        img.onerror = function() {
+            console.error('Error loading image: ' + imagePaths[frameIndex]); //just in case
+        };
+    }
+
+    // Example usage: render the first image
+    renderFrame(0);
+
+    gsap.registerPlugin(ScrollTrigger);  // I LOVE THIS
+
+    const startOuterOffset = vhToPx(0);
+    const startInnerOffset = vhToPx(11.111);
+    const endOffset = vhToPx(700);
+
+    const outerStartStr = `top+=${startOuterOffset} top`;
+    const innerStartStr = `top top+=${startInnerOffset}`;
+    const endStr = `+=${endOffset}`;
+
+    ScrollTrigger.create({
+        trigger: ".theCanvas",
+        pin: true,  // so the outer div wont just keep scrolling up
+        start: outerStartStr, 
+        end: endStr, //until the anim done, stay on screen
+    
+    });
+
+    gsap.to({}, { // Use an empty object instead of {window}
+        scrollTrigger: {
+            scrub: 1,
+            trigger: ".theCanvas",
+            start: innerStartStr,
+            end: endStr,
+            onUpdate: function(self) { // Pass 'self' to access ScrollTrigger instance
+                const progress = self.progress; // returns a value between 0 & 1 that shows how much scrolling is done so far
+                const frameIndex = Math.round(progress * (numberOfImages - 1)); // select the frame based on that
+                renderFrame(frameIndex);
+                if(frameIndex === 592){
+                }
+                else{
+                }
+            }
+        }
+    });
+
+        //navbar shit
+
+        const menuIcon = document.getElementById('menu-icon');
+        const navbar = document.getElementById('navbar');
+        const navItems = document.querySelectorAll('.nav-item');
+
+        let isNavbarOpen = false;
+
+        function toggleNavbar() {
+            isNavbarOpen = !isNavbarOpen;
+            menuIcon.classList.toggle('active');
+            navbar.classList.toggle('active');
+
+            if (isNavbarOpen) {
+                gsap.to(navItems, {
+                    opacity: 1,
+                    y: 0,
+                    stagger: 0.2,
+                    ease: "power3.out",
+                    duration: 1
+                });
+            } else {
+                gsap.to(navItems, {
+                    opacity: 0,
+                    y: 20,
+                    stagger: 0.1,
+                    ease: "power3.in",
+                    duration: 0.8
+                });
+            }
+        }
+
+        // Menu icon click event
+        menuIcon.addEventListener('click', toggleNavbar);
+
+        // Navbar item hover effect
+        navItems.forEach(item => {
+            const dropdown = item.querySelector('.dropdown');
+            const dropdownItems = dropdown.querySelectorAll('p');
+
+            item.addEventListener('mouseenter', () => {
+                gsap.to(dropdown, { maxHeight: dropdown.scrollHeight, opacity: 1, marginTop: 10, duration: 0.5 });
+            });
+
+            item.addEventListener('mouseleave', () => {
+                gsap.to(dropdown, { maxHeight: 0, opacity: 0, marginTop: 0, duration: 0.5 });
+            });
+
+            dropdownItems.forEach(dropdownItem => {
+                dropdownItem.addEventListener('mouseenter', () => {
+                    gsap.to(dropdownItem, { opacity: 1, duration: 0.5 });
+                });
+
+                dropdownItem.addEventListener('mouseleave', () => {
+                    gsap.to(dropdownItem, { opacity:0.7, color: '#213129', duration: 0.5 });
+                });
+            });
+        });
+    </script>
+</body>
+</html>

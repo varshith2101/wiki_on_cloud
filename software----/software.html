@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research Hub</title>
+    <link href="https://fonts.googleapis.com/css2?family=Titan+One&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="styling.css">
+    <script defer src="script.js"></script>
+
+</head>
+<body>
+    <nav class="navbar">
+        <img src="https://static.igem.wiki/teams/5141/images/caapi.webp" alt="" style="height: 10vh;width: auto;">
+        <div class="navbar-content">
+            <div class="navbar-links">
+                <div class="dropdown">
+                    <a href="#" target="_blank">Project</a>
+                    <div class="dropdown-content">
+                        <a href="#" target="_blank">Description</a>
+                        <a href="#" target="_blank">Background</a>
+                        <a href="#" target="_blank">Design</a>
+                        <a href="#" target="_blank">Proof of Concept</a>
+                        <a href="#" target="_blank">Implementation</a>
+                        <a href="#" target="_blank">Biosafety</a>
+                        <a href="#" target="_blank">Contribution</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <a href="#" target="_blank">Wet Lab</a>
+                    <div class="dropdown-content">
+                        <a href="#" target="_blank">Engineering </a>
+                        <a href="#" target="_blank">Materials</a>
+                        <a href="#" target="_blank">Notebook</a>
+                        <a href="#" target="_blank">Protocols</a>
+                        <a href="#" target="_blank">Measurement</a>
+                        <a href="#" target="_blank">Lab Safety</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <a href="#" target="_blank">Dry Lab</a>
+                    <div class="dropdown-content">
+                        <a href="#" target="_blank">Modelling</a>
+                        <a href="#" target="_blank">Parts</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <a href="#" target="_blank">Software</a>
+                </div>
+                <div class="dropdown">
+                    <a href="#" target="_blank">Human Practices</a>
+                    <div class="dropdown-content">
+                        <a href="#" target="_blank">iHP</a>
+                        <a href="#" target="_blank">Outreach & Collaboration</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <a href="#" target="_blank">Education</a>
+                </div>
+                <div class="dropdown">
+                    <a href="#" target="_blank">Team</a>
+                    <div class="dropdown-content">
+                        <a href="#" target="_blank">Meet the Team</a>
+                        <a href="#" target="_blank">Attributions</a>
+                        <a href="#" target="_blank">Medals</a>
+                    </div>
+                </div>
+            </div>
+            <style>
+                
+            </style>
+        </div>
+        <div class="navbar-icons">
+            <a href="https://www.instagram.com/manipalbiomachines?igsh=MWo3MHpoNXBpcHhmdQ==" target="_blank"><i style="height: 3vh;width: auto;color:#3D4A2D;padding-bottom: 0vh;" data-lucide="instagram"></i></a>
+            <a href="https://www.linkedin.com/company/manipal-biomachines/" target="_blank"><i style="height: 3vh;width: auto;color:#3D4A2D;padding-bottom: 0vh;" data-lucide="linkedin"></i></a>
+            <a href="https://manipalbiomachinesmahe.com" target="_blank"><img style="height: 3vh;width: auto;color:#3D4A2D" src="https://static.igem.wiki/teams/5141/images/webdevicon.webp" alt=""></a>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <h1 style="margin-bottom: 30vh;">Software<br>Coffee Yield Prediction</h1>
+        <div class="scroll-indicator">↓</div>
+    </header>
+
+    <main class="container main-content">
+        <aside class="table-of-contents" style="width: 15vw;">
+            <h2>Table of Contents</h2>
+            <ul>
+                <li><a href="#section-1"  style="margin-top: 0vh;">Inspiration</a></li>
+                <li><a href="#section-2">Dataset</a></li>
+                <li><a href="#section-3">Important parameters</a></li>
+                <li><a href="#section-4">The need</a></li>
+                <li><a href="#section-5">Model</a></li>
+                <li><a href="#section-6">Results</a></li>
+                <li><a href="#section-7">Workflow for Model Use</a></li>
+                <li><a href="#section-8">Contributions</a></li>
+                <li><a href="#section-9">Conclusion</a></li>
+                <li><a href="#section-10">Future Direction</a></li>
+                <li><a href="#section-11">References</a></li>
+            </ul>
+        </aside>
+
+        <div class="content-panel">
+            <div class="research-content">
+                <section id="section-1">
+                    <h2>Inspiration</h2>
+                    <p>Coffee, a drink that is revered as one of the most consumed beverages around the world, is also one of the biggest contributors to employment for many. But this drink isn’t as easy to grow as it is to brew. While the world coffee industry is worth about $484 billion which is forecasted to reach around $690 billion by 2030, It does not come without its challenges</p>
+                    <p>Majority of the coffee production happens in middle to low income countries where the average size of land holdings is about 2ha (hectare). Farmers tend to pool resources like labour and equipment for the harvest season.
+                        Advance planning of harvest schedules, procuring harvesting equipment and labor requirements by farmers necessitates financial planning and budgeting, often based on the potential revenue out of an estimated yield of coffee. Misjudgement in yield or destruction of crops leads to financial miscalculation which results in wastage of financial resources and pushes farmers into vicious cycles of debts.
+                    </p>
+                    <p>In addition, the ever changing climatic conditions affect coffee related agricultural practices. They disrupt the growth and harvest cycle leading to uncertainty about potential coffee yield in a crop year. </p>
+                    <p>The team had a meeting with Maurice D’Moss, a former iGEM participant from 2021 and a fellow coffee enthusiast, to discuss the challenges encountered by the coffee industry who highlighted issues like yield uncertainty, adulteration, lack of regulation of prices, farmer debts, etc.</p>
+                    <p>Driving inspiration from issues like weather-related uncertainty and challenges faced by agriculturists further validated the problem at hand. Hence, we decided to develop a machine learning model called ‘_______________’ which is a regressive model that primarily predicts the coffee yield of a particular year. This software is a simple tool that considers 15 parameters to give potential crop output for a particular year.</p>
+                </section>
+                <section id="section-2">
+                    <h2>Dataset</h2>
+                    <p>The publicly available data related to coffee provided by government websites were found to be scarce and unconsolidated for the most part. As a result, we took it upon ourselves to consolidate relevant data from various reputable and verified websites, as well as government organizations. The websites provided us location-specific legacy data of the required parameters. This dataset was not only useful for training our model but also for future projects in the similar domains.</p>
+                    <p>We used the data available from the following websites:<br></p>
+                    <p>1. <a style="color: #213129; text-decoration: underline;" href="https://coffeeboard.gov.in/database-coffee.html" target="_blank">Coffee Board of India :</a> data on parameters: “Area under plantation”, “Bearing area”, “Coffee Yield” and  “Productivity” for coffee producing states. The major coffee producing states in India are Karnataka, Kerala and Tamil Nadu have been divided into 10 districts in total. Other non-traditional coffee producing regions include Andhra Pradesh, Orissa and the north eastern region of India.</p>
+                    <p>2. <a style="color: #213129; text-decoration: underline;" href="https://indiawris.gov.in/wris/#/rainfall" target="_blank">India Water-Resource Information System :</a> provided the data:“ district wise monthly rainfall” from 1990 - 2024.</p>
+                    <p>3.  The data for “Surface Pressure”, “Temperature”, “Specific Humidity”, “Surface Soil Wetness”, “Temperature Maximum” and “Temperature Minimum” was obtained from NASA POWER DAV for the following locations for years from 1990-2022.</p>
+                    <p style="padding-left: 5vw;">Location and lat/long:
+                        Karnataka_Chikmagalur -13.3392 75.7785<br>
+                        Karnataka_Kodagu -12.426 75.7266<br>
+                        Karnataka_Hassan -13.0028 76.1089<br>
+                        Kerala_Wayanad -11.6104 75.8024<br>
+                        Kerala_Travancore -8.5059 76.6554<br>
+                        Kerala_Nelliampathy -10.5081 76.643<br>
+                        Tamil Nadu_Pulneys -10.24 77.47<br>
+                        Tamil Nadu_Nilgiris- 11.423 76.693<br>
+                        Tamil Nadu_Salem -11.6643 78.146<br>
+                        Tamil Nadu_Coimbatore -11.0168 76.9558<br>
+                    </p>
+                    <p>The data was directly queried from the <a style="color: #213129; text-decoration: underline;" href="https://power.larc.nasa.gov/api/temporal/monthly/point" target="_blank">API</a>(https://power.larc.nasa.gov/api/temporal/monthly/point),  hence it hasn't been included in the compiled spreadsheet.</p>
+                    <p>4. <a style="color: #213129; text-decoration: underline;" href="https://geoportal.natmo.gov.in/#main-content" target="_blank">National Atlas and Thematic Mapping Organisation :</a>  provided the soil Nitrogen, phosphorus and Potassium values in the range “1-3”.
+                    </p>
+                    <p>Preview of Dataset:<br></p>
+                    <iframe class="airtable-embed" src="https://airtable.com/embed/appmoOkYvDre5nybv/shrm0Y02eabNaqGCy?viewControls=on" frameborder="0" onmousewheel="" width="100%" height="533" style="background: transparent; border: 0.1vh solid #ccc;"></iframe>
+                    <p>For more information about the datasets and to access them, please visit the <a style="color: #213129; text-decoration: underline;" href="contributions.html" target="_blank">contributions</a> page.</p>
+                </section>
+                <section id="section-3">
+                    <h2>Important parameters</h2>
+                    <p>The parameters for the model were finalized post  meeting with the Karnataka Planters’ Association who provided valuable insights into coffee plantation and the importance of the various parameters that were relevant to the Coffee Yield</p>    
+                    <p>The 15 parameters we used in training are model are:<br></p>
+                    <p style="padding-left: 2vw;"> 
+                        • Location: Location (must be one of the specified options)<br>
+                        • PS: Pressure at the surface<br>
+                        • T2M: Temperature at 2 meters above ground<br>
+                        • QV2M: Specific humidity at 2 meters<br>
+                        • GWETTOP: Surface soil moisture<br>
+                        • T2M_MAX: Maximum temperature at 2 meters<br>
+                        • T2M_MIN: Minimum temperature at 2 meters<br>
+                        • Area under Plantation (Ha): Size of the plantation area<br>
+                        • blossom_rainfall: Rainfall during the blossom season<br>
+                        • monsoon_rainfall: Rainfall during the monsoon season<br>
+                        • post_monsoon_rainfall: Rainfall after the monsoon<br>
+                        • N: Nitrogen content in soil<br>
+                        • P: Phosphorus content in soil<br>
+                        • K: Potassium content in soil<br>
+                        • Species: Type of coffee (e.g., Arabica or Robusta)<br>
+                    </p>                  
+                </section>
+                <section id="section-4">
+                    <h2>The need for coffee yield prediction</h2>
+                    <p>Predicting the yield of coffee is nothing short of a blessing as far as farmers are concerned. Having accurate information of the yield before the harvest can benefit them in the following ways:</p>
+                    <p>1. <u>Optimised Resource management</u>- Enables farmers to use resources like pesticides, water etc efficiently when the yield is known</p>
+                    <p>2. <u>Tackling adverse climatic condition</u>- Farmers can better adapt to the change in climatic condition by gaining insights into how the weather is affecting the future yield</p>
+                    <p>3. <u>Resisting Oppression</u>-Prior knowledge of potential yield would assist farmers to negotiate better prices with buyers and also relieve them from the stress of uncertain yield.</p>
+                    <p>4. <u>Improved Supply chain Management</u>- In a follow-up meeting with Karnataka Planters’ Association, they emphasized how prior knowledge of yield could ensure that processing units, warehouses, exporters and farmers are better prepared to handle the crop.</p>
+                </section>
+                <section id="section-5">
+                    <h2>Model</h2>
+                    <p>The model is trained on 15 parameters to predict coffee yield which are based on land area, climatic conditions, and soil quality.</p>
+                    <p><u>Key Steps:<br></u></p>
+                    <p>1. <u>Feature Engineering:</u> - Key features include land area, climatic data (e.g., rainfall, temperature), soil NPK values, and other factors. Bearing area may also be used as per requirement.</p>
+                    <p>2. <u>Dataset Acquisition:</u> - The datasets have been obtained from multiple open-source websites. The dataset is joined on the location and year values into a single dataframe.</p>
+                    <p>3. <u>Preprocessing:</u> - Categorical variables like Species and Location are numerically encoded to prepare for machine learning algorithms. The numerical values are scaled and normalized to appropriate ranges. The target value is converted into production per unit by dividing it by Area under Plantation.</p>
+                    <p>4. <u>Model Selection:</u> -  The following models were tested with multiple hyperparameter settings using GridSearch:
+                        <p style="padding-left: 2vw;"> 
+                            • Linear Regression<br>
+                            • Ridge Regression<br>
+                            • Lasso Regression<br>
+                            • Decision Tree<br>
+                            • Random Forest Regressor<br>
+                            • Gradient Boosting<br>
+                            • XGBoost<br>
+                        </p>
+                    </p>
+                    <p>5. <u>Model Training and Evaluation::</u> -  The model output is multiplied with Area under Plantation to bring back to original scale. The training used a K-fold cross-validation approach, ensuring more reliable metrics due to limited data availability. The K-fold approach trains the model with (k-1) folds for training and 1 fold for evaluation. This is done sequentially for all train-test splits which gives us more generalizable metrics for the final output.</p>
+                <center><figure>
+                    <img  style="width:50vw;height: auto;" src="https://static.igem.wiki/teams/5141/software/model-architecture.webp" alt="">
+                    <figcaption>Figure(1) Random Forest Regressor Architecture </figcaption>
+                </figure></center>
+                </section>
+                <section id="section-6">
+                    <h2>Results</h2>
+                    <p>The tree-based models and gradient-boosting models achieved a strong performance with an <strong>R² score</strong> of <strong>0.986</strong>. <strong>XGBoost</strong> and <strong>Random Forest</strong> delivered better results with lower error variance. Key features influencing the prediction include Area under Plantation, Species, and Location. Temperature, rainfall, and pressure were secondary contributors, while other factors showed minimal impact.</p>
+                    <center><figure>
+                        <img style="width:50vw;height: auto;" src="https://static.igem.wiki/teams/5141/software/model-performance.webp" alt="">
+                        <figcaption>Figure(2) R^2 metric of various models in K-fold validation</figcaption>
+                    </figure></center>
+                    <center><figure>
+                        <img style="width:50vw;height: auto;" src="https://static.igem.wiki/teams/5141/software/feature-importance.webp" alt="">
+                        <figcaption>Figure(3) Learned relative importance of input parameters by Random Forest</figcaption>
+                    </figure></center>
+                </section>
+                <section id="section-7">
+                    <h2>Workflow for Model Use</h2>
+                    <p>Users can run the model by following the steps outlined in the README file of the GitHub repository <a style="color: #213129; text-decoration: underline;" href="https://gitlab.igem.org/2024/software-tools/mit-mahe/-/tree/main" target="_blank">here</a>. The model weights can be loaded with appropriate input data, and for missing data, mean values from historical data per location can be used, though it is recommended to use actual data where possible.</p>
+                    <center><figure></figure>
+                        <img style="width: 50vw;height: auto;" src="https://static.igem.wiki/teams/5141/software/model-pipeline.webp" alt="">
+                        <figcaption>Figure(4) End-to-End Model Pipeline</figcaption>
+                    </figure></center>
+                </section>
+                <section id="section-8">
+                    <h2>Contribution</h2>
+                    <p>To know more Software team's our contribution visit the <a style="color: #213129; text-decoration: underline;" href="#">Contribution</a> page</p>
+                </section>
+                <section id="section-9">
+                    <h2>Conclusion</h2>
+                    <p>Predicting coffee yield is of utmost importance for both farmers and the end consumers of coffee. The need for a Machine Learning model with precise and accurate prediction of coffee yield was the need of the hour and hence this formed the basis of inspiration to build a model for the drink we all know and love. With various challenges while procuring datasets for training the model, to fine tuning the R^2 score and comparing with various ML models, this is definitely a significant step towards improving the Quality of life of both farmers and the end consumers. This also opens the door to other research groups and organizations to access organized, open source data for further research and innovation in the field of agriculture.</p>
+                </section>
+                <section id="section-10">
+                    <h2>Future Direction</h2>
+                    <p>1. A good dataset is a crucial component for any machine learning application. As there is a scarcity of datasets related to coffee as a consequence of very few Large-scale coffee-producing states in India, our next step would be to collect additional data such as yield, rainfall, temperature, soil fertility levels etc. through means of contacting coffee estates/associations in the other coffee growing states.</p>
+                    <p>This would not only increase the robustness and comprehensiveness of data but also help train our model to fit the data from coffee-producing estates which contribute majorly to coffee production in the country.</p>
+                    <p>2. This approach lays the foundation for application of the model to predict the yield of other crops as well since most of the parameters remain the same.</p>
+                    <p>3. In a meeting with the Coffee Board of India, they pointed out that any model used to predict yield of coffee has its own complications while deploying it on a large scale, since coffee production also involves various unmeasurable factors. To overcome this, we aim to
+                        collaborate with them to achieve this common goal</p>
+                    <p>4. We aim to develop a Graphic User Interface (GUI) for the model and implement it in the form of a website. This is done with an objective that this resource is accessible to common people such as farmers, researchers or future iGEM teams. They can utilize the model for assistance for further innovation or research purposes</p>
+                </section>
+                <section id="section-11">
+                    <h2>References</h2>
+                    <p><u>1. Kittichotsatsawat, Y., Tippayawong, N., & Tippayawong, K. Y. (2022). Prediction of arabica coffee production using artificial neural network and multiple linear regression techniques. Scientific Reports, 12(1), 14488.</u></p>
+                    <p><u>2. Van Klompenburg, T., Kassahun, A., & Catal, C. (2020). Crop yield prediction using machine learning: A systematic literature review. Computers and Electronics in Agriculture, 177, 105709.</u></p>
+                    <p><u>3. Kouadio, L., Deo, R. C., Byrareddy, V., Adamowski, J. F., & Mushtaq, S. (2018). Artificial intelligence approach for the prediction of Robusta coffee yield using soil fertility properties. Computers and electronics in agriculture, 155, 324-338.</u></p>
+                    <p><u>Agricultural decision system based on advanced machine learning models for yield prediction: Case of East African countries </u></p>
+                </section>
+            </div>
+        </div>
+    </main>
+    <footer class="myFooter">
+        <div class="footer-content">
+            <div class="footer-section sponsors">
+                <h2 style="color: #213129;font-size: 6vh;margin: 0;padding-bottom: 1vh;font-family: 'Titan One', cursive;">Sponsors</h2>
+                <div class="sponsors-grid" style="padding-left: 5vw;">
+                    <img class="grid-item" style="height:11vh; width: auto; padding-left: 1vw;" src="https://static.igem.wiki/teams/5141/images/topleft.webp" alt="Sponsor 1">
+                    <img class="grid-item" style="height:10vh; width: auto;padding-right: 3vw;padding-top: 2vh;" src="https://static.igem.wiki/teams/5141/images/manipal.webp" alt="Sponsor 2">
+                    <img class="grid-item" style="height:7vh; width: auto;padding-left: 3vw;padding-top: 2vh;" src="https://static.igem.wiki/teams/5141/images/right-bottom.webp" alt="Sponsor 3">
+                    <img class="grid-item" style="height:4vh; width: auto;padding-top: 4vh;padding-right: 0vw;padding-left: 2vw;" src="https://static.igem.wiki/teams/5141/images/left-bottom.webp" alt="Sponsor 4">
+                    <img class="grid-item" style="height:6vh; width: auto;padding-top: 2.5vh;padding-right: 1vw;padding-left: 1vw;" src="https://static.igem.wiki/teams/5141/images/images-removebg-preview.webp" alt="Sponsor 4">
+                </div>
+            </div>
+            <div class="footer-divider"></div>
+            <div class="footer-section contact" style="color: #213129;margin-left: 5vw;">
+                <h2 style="font-size: 6vh;margin-bottom: 0;font-family: 'Titan One', cursive;">Contact Us</h2>
+                <div style="display: flex; justify-content: space-between; align-items: center;margin-left: 1vw;">
+                    <div style="width: 20vw;">
+                        <p style="font-size: 1.8vh;margin-top: 0;"><strong>Email:</strong> manipalbiomachines.igem@gmail.com</p>
+                        <p style="font-size: 1.8vh;"><strong>Address:</strong> <br>Project laboratory, Academic Block-2, Manipal Institute of Technology, MAHE, Eshwar Nagar, Manipal, Udupi, Karnataka, India - 576104 </p>
+                    </div>
+                </div>
+            </div>
+            <img style="width: 15vw; height: auto;margin-right: 7vw;" src="https://static.igem.wiki/teams/5141/images/igem-mit-mahe-logo.webp" alt="iGEM MIT">
+
+        </div>
+        <div class="last-one">
+            &copy; 2024- Content on this site is licensed under a Creative Commons Attribution 4.0 International license.
+        </div>
+    </footer>
+</body>
+</html>

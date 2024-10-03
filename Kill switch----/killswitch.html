@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kill switch</title>
+    <link href="https://fonts.googleapis.com/css2?family=Titan+One&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="styling.css">
+    <script defer src="script.js"></script>
+
+</head>
+<body>
+    <nav class="navbar">
+        <img src="https://static.igem.wiki/teams/5141/images/caapi.webp" alt="" style="height: 10vh;width: auto;">
+        <div class="navbar-content">
+            <div class="navbar-links">
+                <div class="dropdown">
+                    <a href="#" target="_blank">Project</a>
+                    <div class="dropdown-content">
+                        <a href="#" target="_blank">Description</a>
+                        <a href="#" target="_blank">Background</a>
+                        <a href="#" target="_blank">Design</a>
+                        <a href="#" target="_blank">Proof of Concept</a>
+                        <a href="#" target="_blank">Implementation</a>
+                        <a href="#" target="_blank">Biosafety</a>
+                        <a href="#" target="_blank">Contribution</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <a href="#" target="_blank">Wet Lab</a>
+                    <div class="dropdown-content">
+                        <a href="#" target="_blank">Engineering </a>
+                        <a href="#" target="_blank">Materials</a>
+                        <a href="#" target="_blank">Notebook</a>
+                        <a href="#" target="_blank">Protocols</a>
+                        <a href="#" target="_blank">Measurement</a>
+                        <a href="#" target="_blank">Lab Safety</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <a href="#" target="_blank">Dry Lab</a>
+                    <div class="dropdown-content">
+                        <a href="#" target="_blank">Modelling</a>
+                        <a href="#" target="_blank">Parts</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <a href="#" target="_blank">Software</a>
+                </div>
+                <div class="dropdown">
+                    <a href="#" target="_blank">Human Practices</a>
+                    <div class="dropdown-content">
+                        <a href="#" target="_blank">iHP</a>
+                        <a href="#" target="_blank">Outreach & Collaboration</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <a href="#" target="_blank">Education</a>
+                </div>
+                <div class="dropdown">
+                    <a href="#" target="_blank">Team</a>
+                    <div class="dropdown-content">
+                        <a href="#" target="_blank">Meet the Team</a>
+                        <a href="#" target="_blank">Attributions</a>
+                        <a href="#" target="_blank">Medals</a>
+                    </div>
+                </div>
+            </div>
+            <style>
+                
+            </style>
+        </div>
+        <div class="navbar-icons">
+            <a href="https://www.instagram.com/manipalbiomachines?igsh=MWo3MHpoNXBpcHhmdQ==" target="_blank"><i style="height: 3vh;width: auto;color:#3D4A2D;padding-bottom: 0vh;" data-lucide="instagram"></i></a>
+            <a href="https://www.linkedin.com/company/manipal-biomachines/" target="_blank"><i style="height: 3vh;width: auto;color:#3D4A2D;padding-bottom: 0vh;" data-lucide="linkedin"></i></a>
+            <a href="https://manipalbiomachinesmahe.com" target="_blank"><img style="height: 3vh;width: auto;color:#3D4A2D" src="https://static.igem.wiki/teams/5141/images/webdevicon.webp" alt=""></a>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <h1 style="margin-bottom: 30vh;">Kill Switch</h1>
+        <div class="scroll-indicator">↓</div>
+    </header>
+
+    <main class="container main-content">
+        <aside class="table-of-contents" style="width: 15vw;">
+            <h2>Table of Contents</h2>
+            <ul>
+                <li><a href="#section-1"  style="margin-top: 0vh;">Overview</a></li>
+                <li><a href="#section-2">References</a></li>
+            </ul>
+        </aside>
+
+        <div class="content-panel">
+            <div class="research-content">
+                <section id="section-1">
+                    <h2>Overview</h2>
+                    <p>Since we are dealing with genetically modified bacteria, safety and biocontainment are critical. For the biocontainment of our genetically modified bacterium, <i>Bacillus Subtilis ATCC 13952</i>, we have developed an inducible kill switch, making sure that these modified bacteria do not go out into the environment. We plan to utilize a kill switch that involves an inducible gene expression system using p-isopropyl benzoate (Cumate) as an inducer to cause toxicity our chassis in its absence. [2] </p>
+                    <p>GalE is the gene that produces the enzyme UDP-glucose 4-epimerase essential for the degradation of galactose which is present in the plant cell wall. Its absence leads to toxicity due to the accumulation of harmful metabolic intermediates when galactose is present. [1] </p>
+                    <p><i>B. subtilis</i> strains lacking <i>galE</i> cannot effectively process galactose, resulting in elevated levels of UDP-galactose, which is fatal to the cells. [1]  </p>
+                    <p>Reactions the enzyme UDP-glucose 4-epimerase is involved in:<br>1. UDP-α-D-glucose ↔ UDP-α-D-galactose<br> 2. UDP-N-acetyl-α-D-glucosamine ↔ UDP-N-acetyl-α-D-galactosamine </p>
+                    <center><figure>
+                        <img  style="width: 35vw;height: auto; padding: 5vh;" src="https://static.igem.wiki/teams/5141/biosafety/kill-switch-1.webp" alt="">
+                        <figcaption style="font-size: 1.5vh"><i>Fig. CymR stays bound to the operator repressing the promoter (-41:+8). Cumate lifts the bound repressor in the presence of which galE is expressed </i> </figcaption>
+                    </figure></center>
+                    <p>We intend to replace this natural promoter with the synthetic cumate induced promoter constructed by combining the strong constitutive <i>Bacillus</i> promoter <i>Pveg</i> with regulatory elements of the<i>Pseudomonas putida, CymR repressor</i>, and its operator sequence CuO. [2] </p>
+                    <p>For our implementation, cumate will be added into our formulation of wettable powder which will be taken up by our chassis passively. The formulation (chassis + Cumate) will be sprayed onto the coffee leaves in the plantation to distribute the chassis for its antifungal action against the HV. Once the Cumate has degraded or washed away the bacteria will no longer be able to survive in that environment. Cumate is a biodegradable inexpensive lab chemical. It is degraded by several microorganisms especially alphaproteobacterial like <i>Rhodococcus,Pseudomonas, and Sphingomonas</i> and is not toxic to the environment. [3][4][5]  </p>
+                    <!-- <img  style="width:40vw;height: auto;padding-left: 20vh;padding-right: 15vh;" src="https://static.igem.wiki/teams/5141/biosafety/kill-switch-1.webp" > -->
+                    </section>
+                <section id="section-2">
+                    <h2>References</h2>
+                    
+<p>1. Krispin, O., & Allmansberger, R. (1998). The Bacillus subtilis galE Gene Is Essential in the Presence of Glucose and Galactose. Journal of Bacteriology, 180(8), 2265–2270. https://www.ncbi.nlm.nih.gov/pmc/articles/PMC107161/<br></p>
+<p>2. Seung Oh Seo, & Schmidt-Dannert, C. (2018). Development of a synthetic cumate-inducible gene expression system for Bacillus. Applied Microbiology and Biotechnology, 103(1), 303–313. https://doi.org/10.1007/s00253-018-9485-4 <br></p>
+<p>3. Klotz, A., Kaczmarczyk, A., & Jenal, U. (2023). A Synthetic Cumate-Inducible Promoter for Graded and Homogenous Gene Expression in Pseudomonas aeruginosa. Applied and Environmental Microbiology, 89(6). https://doi.org/10.1128/aem.00211-23 <br></p>
+<p>4. Bae, H. W., Kim, D., Choi, K. Y., Kwon, N. R., Chae, J. C., Zylstra, G. J., Koh, S.-C., Lee, C.-H., & Kim, E. (2007). Functional identification ofp-cumate operons in the terpene-degradingRhodococcussp. strain T104. FEMS Microbiology Letters, 266(1), 54–59. https://doi.org/10.1111/j.1574-6968.2006.00497.x <br></p>
+<p>5. Kaczmarczyk, A., Vorholt, J. A., & Francez‐Charlot, A. (2013). Cumate-Inducible Gene Expression System for Sphingomonads and Other Alphaproteobacteria. Applied and Environmental Microbiology, 79(21), 6795–6802. https://doi.org/10.1128/aem.02296-13 <br></p>
+                </section>
+            </div>
+        </div>
+                    
+    </main>
+    <footer class="myFooter">
+        <div class="footer-content">
+            <div class="footer-section sponsors">
+                <h2 style="color: #213129;font-size: 6vh;margin: 0;padding-bottom: 1vh;font-family: 'Titan One', cursive;">Sponsors</h2>
+                <div class="sponsors-grid" style="padding-left: 5vw;">
+                    <img class="grid-item" style="height:11vh; width: auto; padding-left: 1vw;" src="https://static.igem.wiki/teams/5141/images/topleft.webp" alt="Sponsor 1">
+                    <img class="grid-item" style="height:10vh; width: auto;padding-right: 3vw;padding-top: 2vh;" src="https://static.igem.wiki/teams/5141/images/manipal.webp" alt="Sponsor 2">
+                    <img class="grid-item" style="height:7vh; width: auto;padding-left: 3vw;padding-top: 2vh;" src="https://static.igem.wiki/teams/5141/images/right-bottom.webp" alt="Sponsor 3">
+                    <img class="grid-item" style="height:4vh; width: auto;padding-top: 4vh;padding-right: 0vw;padding-left: 2vw;" src="https://static.igem.wiki/teams/5141/images/left-bottom.webp" alt="Sponsor 4">
+                    <img class="grid-item" style="height:6vh; width: auto;padding-top: 2.5vh;padding-right: 1vw;padding-left: 1vw;" src="https://static.igem.wiki/teams/5141/images/images-removebg-preview.webp" alt="Sponsor 4">
+                </div>
+            </div>
+            <div class="footer-divider"></div>
+            <div class="footer-section contact" style="color: #213129;margin-left: 5vw;">
+                <h2 style="font-size: 6vh;margin-bottom: 0;font-family: 'Titan One', cursive;">Contact Us</h2>
+                <div style="display: flex; justify-content: space-between; align-items: center;margin-left: 1vw;">
+                    <div style="width: 20vw;">
+                        <p style="font-size: 1.8vh;margin-top: 0;"><strong>Email:</strong> manipalbiomachines.igem@gmail.com</p>
+                        <p style="font-size: 1.8vh;"><strong>Address:</strong> <br>Project laboratory, Academic Block-2, Manipal Institute of Technology, MAHE, Eshwar Nagar, Manipal, Udupi, Karnataka, India - 576104 </p>
+                    </div>
+                </div>
+            </div>
+            <img style="width: 15vw; height: auto;margin-right: 7vw;" src="https://static.igem.wiki/teams/5141/images/igem-mit-mahe-logo.webp" alt="iGEM MIT">
+
+        </div>
+        <div class="last-one">
+            &copy; 2024- Content on this site is licensed under a Creative Commons Attribution 4.0 International license.
+        </div>
+    </footer>
+</body>
+</html>
