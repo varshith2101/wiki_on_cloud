@@ -11,22 +11,6 @@ document.addEventListener('DOMContentLoaded', () => {
         threshold: 0.5
     };
 
-    const sectionObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                setTimeout(() => {
-                    entry.target.classList.add('visible');
-                    updateActiveSection(entry.target.id);
-                }, 200);
-            }
-            else{
-            }
-        });
-    }, observerOptions);
-
-    sections.forEach(section => {
-        sectionObserver.observe(section);
-    });
 
     function updateActiveSection(sectionId) {
         tocItems.forEach((item) => {

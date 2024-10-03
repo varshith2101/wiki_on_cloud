@@ -168,13 +168,9 @@ body, html {
 }
 .research-content section {
     margin-bottom: 2.5vw;
-    opacity: 0;
-    transform: translateY(1.852vh);
-    transition: opacity 0.5s ease, transform 0.5s ease;
-}
-.research-content section.visible {
     opacity: 1;
     transform: translateY(0);
+    transition: opacity 0.5s ease, transform 0.5s ease;
 }
 .research-content h2 {
     font-family: 'Titan One', cursive;
@@ -186,7 +182,22 @@ body, html {
     padding-left: 1vw;
     font-size: 2vh;
 }
-
+* {
+    box-sizing: border-box;
+  }
+  
+  .column {
+    float: left;
+    width: 33.33%;
+    padding: 5px;
+  }
+  
+  /* Clearfix (clear floats) */
+  .row::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
 
         
         .myFooter {
