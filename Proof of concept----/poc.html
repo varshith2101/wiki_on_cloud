@@ -1,16 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<ht lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Implementation</title>
+    <title>Proof of concept</title>
     <link href="https://fonts.googleapis.com/css2?family=Titan+One&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
     <link rel="stylesheet" href="../styling.css">
     <script defer src="../script.js"></script>
 
 </head>
-<body>
     <nav class="navbar">
         <img src="https://static.igem.wiki/teams/5141/images/caapi.webp" alt="" style="height: 10vh;width: auto;">
         <div class="navbar-content">
@@ -79,7 +78,7 @@
     </nav>
 
     <header class="hero">
-        <h1 style="margin-bottom: 30vh;">Implementation</h1>
+        <h1 style="margin-bottom: 30vh;">Proof of concept</h1>
         <div class="scroll-indicator">↓</div>
     </header>
 
@@ -88,9 +87,9 @@
             <h2>Table of Contents</h2>
             <ul>
                 <li><a href="#section-1"  style="margin-top: 0vh;">Overview</a></li>
-                <li><a href="#section-2">Performance Metrics</a></li>
-                <li><a href="#section-3">Application and dosage</a></li>
-                <li><a href="#section-4">Production</a></li>
+                <li><a href="#section-2">Steps of Homologous Recombination (HR)</a></li>
+                <li><a href="#section-3">Application in the Project</a></li>
+                <li><a href="#section-4">Steps of HR in the Project</a></li>
                 <li><a href="#section-5">References</a></li>
             </ul>
         </aside>
@@ -99,141 +98,128 @@
             <div class="research-content">
                 <section id="section-1">
                     <h2>Overview</h2>
-                    <p>The wettable powder formulation of our genetically engineered <i>Bacillus subtilis</i> (the ideal strain) is a key solution for managing Coffee Leaf Rust (CLR). The wettable powder has been chosen as the most suitable application method as it is expected to give optimal results with our Biocontrol Agent (BCA), 
-                    </p>
-                    <p>Our genetically engineered <i>B. subtilis</i>, utilizing a dual-promoter system for Iturin A production, offers both preventative and curative action against CLR, unlike traditional fungicides like copper fungicides or Bordeaux mixture, which are primarily preventative.</p>
-                    <p><b>Preventative Action:</b> The constitutive promoter ensures continuous, baseline production of Iturin A, even before the infection starts, creating a protective barrier on coffee plants that prevents fungal spores from establishing. This provides ongoing protection without the need for constant reapplication.</p>
-                    <p><b>Curative Action:</b> The inducible promoter kicks in under specific environmental triggers, like infection stress, leading to a surge in Iturin A production. This rapid increase targets and disrupts existing fungal cells, effectively acting as a cure once the pathogen has infected the plant.
-                    </p>
-                    <p>Outlined below are the key aspects of the product (in comparison with existing products) including the performance metrics production methodology, formulation, application guidelines, and cost analysis of the product are stated below.
-                    </p>
-                    <p>For our implementation, cumate will be added into our formulation of wettable powder which will be taken up by our chassis passively. The formulation (chassis + Cumate) will be sprayed onto the coffee leaves in the plantation to distribute the chassis for its antifungal action against the HV. Once the Cumate has degraded or washed away the bacteria will no longer be able to survive in that environment. Cumate is a biodegradable inexpensive lab chemical. It is degraded by several microorganisms especially alphaproteobacterial like <i>Rhodococcus,Pseudomonas, and Sphingomonas</i> and is not toxic to the environment. [3][4][5]  </p>
-                    <!-- <img  style="width:40vw;height: auto;padding-left: 20vh;padding-right: 15vh;" src="https://static.igem.wiki/teams/5141/biosafety/kill-switch-1.webp" > -->
-                    </section>
-                <section id="section-2">
-                    <h2>Performance Metrics</h2>
+
+    <h1>Homologous Recombination in Bacillus subtilis</h1>
+    <p>
+        Homologous recombination (HR) is a precise method used to modify bacterial genomes by replacing or inserting specific DNA sequences with the help of flanking homologous regions <a" target="_blank">[1]</a>. In this project, HR is employed to enhance the production of Iturin A in <i>Bacillus subtilis</i> by replacing the native Pitu promoter, which regulates Iturin A biosynthesis, with a stronger dual promoter. This dual promoter, composed of P43 and Pbac A, will improve gene expression throughout both the exponential and stationary phases of bacterial growth.
+    </p>
+</section>
+<section id="section-2">
+    <h2>Steps of Homologous Recombination (HR)</h2>
+    <p>The steps of homologous recombination (HR) for genome modification and DNA repair are sequential processes that ensure the accurate exchange or repair of genetic material.</p>
+
+    <h3>1. Recognition of the Double-Strand Break (DSB)</h3>
+    <p>
+        Homologous recombination typically begins with the recognition of a DNA double-strand break (DSB). These breaks can occur naturally during cell division or can be induced by external factors like radiation, chemicals, or through genetic engineering tools like CRISPR-Cas9. The cell recognizes the DSB as a signal for repair and recruits several repair proteins to the site of damage. In bacterial systems like <i>Bacillus subtilis</i>, RecA plays a key role in initiating the repair process by binding to the broken DNA ends.
+    </p>
+
+    <h3>2. End Processing</h3>
+    <p>
+        After recognition, the broken DNA ends are processed to create single-stranded DNA (ssDNA) overhangs. This step involves the resection of the 5’ ends of the break, leaving exposed 3’ single-stranded tails. Specific proteins, such as RecBCD in bacteria, are involved in this end-processing step. These ssDNA tails are crucial because they will search for a homologous sequence in the DNA to initiate repair.
+    </p>
+
+    <h3>3. Strand Invasion</h3>
+    <p>
+        Once the ssDNA overhangs are formed, the next critical step is strand invasion. The ssDNA searches for a homologous sequence on a sister chromatid or homologous chromosome. This is facilitated by the RecA protein, which coats the ssDNA and helps it align with the complementary DNA strand. The invading strand forms a displacement loop (D-loop) by invading the homologous region, effectively pairing with the complementary DNA sequence of the homologous chromosome or DNA donor sequence. This step ensures the correct sequence is used as a template for repair or recombination.
+    </p>
+
+    <h3>4. DNA Synthesis and Ligation</h3>
+    <p>
+        After strand invasion, the 3’ end of the invading strand serves as a primer for new DNA synthesis. DNA polymerases extend the invading strand using the homologous template. This process ensures that the broken region is filled with the correct genetic sequence. As the new DNA is synthesized, the complementary strand is also synthesized on the other side of the break. Finally, DNA ligases join (ligate) the newly synthesized DNA to the original strands, completing the repair of the DSB.
+    </p>
+
+    <h3>5. Resolution of the Holliday Junction</h3>
+    <p>
+        After DNA synthesis and ligation, the recombined DNA forms a structure known as the Holliday junction. This is an intermediate cross-shaped structure where the strands of the two homologous DNA molecules are covalently linked. The Holliday junction must be resolved for the recombination to be complete.
+    </p>
+    <p>This can occur in two ways:</p>
+    <ul>
+        <li>
+            <strong>Crossover resolution:</strong> where the genetic material is exchanged between the two DNA molecules, resulting in the swapping of genetic sequences.
+        </li>
+        <li>
+            <strong>Non-crossover resolution:</strong> where the original DNA molecules remain largely unchanged, but the break is repaired using the homologous sequence as a template [2].
+        </li>
+    </ul>
+    <p>
+        Special proteins, like resolvases, help in the resolution of the Holliday junction by cutting and re-ligating the DNA strands in the appropriate configuration, ensuring genomic stability[2]
+
+</section>
+
+<section id="section-3">
+    <h2>Application in the Project</h2>
+    <p>
+        In this project, HR is used to integrate a DNA fragment containing a dual promoter (P43 and Pbac A) into the <i>Bacillus subtilis</i> genome, swapping the native Pitu promoter. The process begins with the intentional induction of a DSB at the target locus, followed by end processing, strand invasion by the homologous arms of the insert, DNA synthesis to incorporate the dual promoter, and final resolution to establish the desired genetic modification.
+    </p>
+
+    <p>
+        These sequential steps, from recognizing the DSB to resolving the Holliday junction, are essential for precise genetic recombination, allowing the introduction of new genes or the replacement of regulatory sequences [1]</a>.
+    </p>
+</section>
+<section id="section-4">
+    
+    <h2>Steps of HR in the Project</h2>
+    <h3>1. Designing the DNA Insert</h3>
+    <p>
+        The DNA fragment was designed to include the dual promoter (P43 and Pbac A), flanked by homology arms of 300-500 bp targeting the Pitu promoter region. In addition, a GFP marker (green fluorescent protein) was inserted downstream of the promoter, which serves as a visual reporter for successful transformations, allowing for the selection of recombinant cells through fluorescence.
+    </p>
+
+    <h3>2. Recognition of the Double-Strand Break (DSB)</h3>
+    <p>
+        HR requires a double-strand break (DSB) at the target site where the native Pitu promoter is located. The DSB triggers the HR repair mechanism, enabling the integration of the new dual promoter sequence. This break can either occur spontaneously or be induced using methods like CRISPR-Cas9 to increase recombination efficiency.
+    </p>
+
+    <h3>3. End Processing and Strand Invasion</h3>
+    <p>
+        The broken DNA ends are processed, leading to the formation of single-stranded DNA, which then invades the homologous sequences on the DNA insert. This invasion step aligns the homology arms of the insert with the corresponding sequences in the genome.
+    </p>
+
+    <h3>4. DNA Synthesis and Ligation</h3>
+    <p>
+        DNA synthesis occurs along the template of the inserted DNA, incorporating the dual promoter and GFP marker into the genome at the desired location. The remaining single-stranded gaps are filled, and the strands are ligated to complete the integration.
+    </p>
+
+    <h3>5. Resolution of the Holliday Junction</h3>
+    <p>
+        Once DNA synthesis is complete, the recombinant structure is resolved through the formation and subsequent resolution of a Holliday junction. This final step ensures the correct incorporation of the new promoter sequence into the genome>[2][3][4][5]</p>
+    <h3>6. Validation of HR</h3>
+    <ul>
+        <li><strong>GFP Expression:</strong> Transformed cells expressing the GFP protein will fluoresce under UV light, providing a straightforward method for identifying successful recombinants [6]</a>.</li>
+        <li><strong>Colony PCR:</strong> To confirm that the correct DNA sequence was inserted, colony PCR will be performed using primers specific to the dual promoter and GFP sequences. Successful recombination will be indicated by amplification of the target regions.</li>
+    </ul>
+</section>
+                <section id="section-5">
+                    <h2>References</h2>
                     
-                    <p>There are three major divisions of control measures currently in practice to mitigate the impact of CLR. The performance metrics of all three are presented to demonstrate the benefits of wettable powder.
-                    </p>
-                    <h3>Chemical Fungicides</h3>
-                    <p>The existing chemical control for Coffee Leaf Rust includes copper products (contact-preventive), systemic triazoles (preventive–curative), and systemic strobilurins (rust spore eradicator). Copper-based fungicides are very effective and have a tonic effect, but are costly and must be present on the leaf before the infection occurs. The copper accumulates in the soil, reaching levels toxic to the surrounding biome. This is an unavoidable problem, as it is necessary to have a positive charge to bind with sites capable of interfering with the fungus’s metabolism and killing it. Therefore, a suspension with 1000 L of water must contain 1.2 kg of the active ingredient Cu2+ [1]. Protective dithiocarbamate fungicides are also adequate for the control of coffee rust. However, under the heavy rains of many coffee-producing regions, their residues do not adhere as well as those of the copper-containing fungicides. H.vastatrix is genetically diverse, with more than 40 different races identified and more constantly appearing, making antifungal resistance a serious concern.
-                    </p>
-                    <p>The carboxamide molecules in use are benzovindiflupir, fluxapyroxade, and thifluzamide. The triazole molecules currently in use include cyproconazole, epoxiconazole, flutriafol, tebuconazole, and triadimenol, whereas, among others.
-                    </p>
-                    <center><iframe style="width: 30vw;height: 30vh;" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQX0LDf_5k5Hyd1Fln-m33aH3hzxm03hanrhvq_yHudsOjYlbjMm4ZnTRsRLHeRKoZUkl6M9yHVjftf/pubhtml?gid=0&amp;single=true&amp;widget=true&amp;headers=false"></iframe></center>
-                    <h3>Resistant cultivars</h3>
-                    <p>T A cross between C. arabica and C. canephora, known as Hibrido de Timor, and its derivatives, has been widely used as a resistant hybrid but isn't resistant to all races of rust. Other resistant varieties, such as robusta hybrids and arabica hybrids, are only resistant to some rust races and come with the downside of inferior cup quality. H.vastatrix is genetically diverse, with more than 40 different races identified and more constantly appearing. Due to the fungi’s rapid rate of evolution, the resistance genes of the plant have often been rendered ineffective, which, when coupled with the issues of replacing entire fields of plants and taking huge losses till they reach maturity, has rendered this method obsolete. Additionally, spreading a single resistant variety globally significantly lowers genetic diversity and increases the chance of the rust overcoming said resistance, among other long-term ecological issues.</p>
-                    <p>The carboxamide molecules in use are benzovindiflupir, fluxapyroxade, and thifluzamide. The triazole molecules currently in use include cyproconazole, epoxiconazole, flutriafol, tebuconazole, and triadimenol, whereas, among others.
-                    </p>
-                    <h3>Agronomic practices</h3>
-                    <p>Sanitation, pruning, weed control, fertilization, and the regulation of shade have all been used with varying degrees of success as none significantly challenge the fungus’s survival to the required degree.
-                    </p>
-                    <center><iframe style="width: 32vw;height: 80vh;"src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQX0LDf_5k5Hyd1Fln-m33aH3hzxm03hanrhvq_yHudsOjYlbjMm4ZnTRsRLHeRKoZUkl6M9yHVjftf/pubhtml?gid=1120982240&amp;single=true&amp;widget=true&amp;headers=false"></iframe></center>
-
+                    <ol>
+                        <li>
+                            Li, X., & Heyer, W. (2007). Homologous recombination in DNA repair and DNA damage tolerance. <em>Cell Research</em>, 18(1), 99-113. 
+                            <a href="https://doi.org/10.1038/cr.2008.1" target="_blank">https://doi.org/10.1038/cr.2008.1</a>
+                        </li>
+                        <li>
+                            Krejci, L., Altmannova, V., Spirek, M., & Zhao, X. (2012). Homologous recombination and its regulation. <em>Nucleic Acids Research</em>, 40(13), 5795-5818. 
+                            <a href="https://doi.org/10.1093/nar/gks270" target="_blank">https://doi.org/10.1093/nar/gks270</a>
+                        </li>
+                        <li>
+                            Wang, Y., Weng, J., Waseem, R., Yin, X., Zhang, R., & Shen, Q. (2012). Bacillus subtilis genome editing using ssDNA with short homology regions. <em>Nucleic Acids Research</em>, 40(12), e91. 
+                            <a href="https://doi.org/10.1093/nar/gks248" target="_blank">https://doi.org/10.1093/nar/gks248</a>
+                        </li>
+                        <li>
+                            Gao, L., She, M., Shi, J., Cai, D., Wang, D., Xiong, M., Shen, G., Gao, J., Zhang, M., Yang, Z., & Chen, S. (2022). Enhanced production of iturin A by strengthening fatty acid synthesis modules in Bacillus amyloliquefaciens. <em>Frontiers in Bioengineering and Biotechnology</em>, 10, 974460. 
+                            <a href="https://doi.org/10.3389/fbioe.2022.974460" target="_blank">https://doi.org/10.3389/fbioe.2022.974460</a>
+                        </li>
+                        <li>
+                            Dang, Y., Zhao, F., Liu, X. et al. (2019). Enhanced production of antifungal lipopeptide iturin A by Bacillus amyloliquefaciens LL3 through metabolic engineering and culture conditions optimization. <em>Microbial Cell Factories</em>, 18, 68. 
+                            <a href="https://doi.org/10.1186/s12934-019-1121-1" target="_blank">https://doi.org/10.1186/s12934-019-1121-1</a>
+                        </li>
+                        <li>
+                            Bisicchia, P., Botella, E., & Devine, K. M. (2010). Suite of novel vectors for ectopic insertion of GFP, CFP and IYFP transcriptional fusions in single copy at the amyE and bglS loci in Bacillus subtilis. <em>Plasmid</em>, 64(3), 143–149. 
+                            <a href="https://doi.org/10.1016/j.plasmid.2010.06.002" target="_blank">https://doi.org/10.1016/j.plasmid.2010.06.002</a>
+                        </li>
+                    </ol>
                 </section>
-                <section id="section-3"></section>
-                    <h2>APPLICATION AND DOSAGE</h2>
-                        <h3>Components of wettable powder</h3>
-                        <p>The wettable powder formulation is prepared with various components, that consider compatibility with the bacterial species to increase shelf life, bioactivity, and overall product quality. There are six major components of the formulation incorporated in an estimated ratio as given below: 
-                        </p>
-                        <p style="padding-left: 3vh;"><b>1. Biocontrol/Microbial Agent:</b> The microbial agent must be kept under optimal conditions to ensure the desired result. Protection against chemical or physical damage during formulation is essential for maintaining its viability.</p>
-                        <p style="padding-left: 3vh;"><b>2. Carriers:</b> The carrier is an inert material that evenly distributes the microbial agent. It plays the role of a solid diluent in the formulation and has no separate effect on the soil or plant environment. The optimum carrier can be considered based on the suspension rate and cost.</p>
-                        <p style="padding-left: 3vh;"><b>3. Dispersants:</b>The dispersants ensure the even distribution of the powder in water or solvents, enhancing the formation of a stable dispersion. It is used to reduce solid or liquid particles in the composition dispersion system to be assembled, and when preparing wetting powder, adding dispersant makes it easy to form dispersion liquid and suspension, and keep the metastable function of dispersion.
-                        </p>
-                        <p style="padding-left: 3vh;"><b>4. Wetting agent:</b> The wetting agents are the surfactants that reduce the surface tension between powder and water for easy dissolution and effective application. The main function of this wetting agent is to easily soak the solid material of the composition in water/solvent. 
-                        </p>
-                        <p>Some wetting agents also exhibit dispersing properties, while some dispersants also have wetting capabilities. Therefore, both the suspension rate and wetting time are taken into account during the screening of dispersants and wetting agents. A higher suspension rate indicates better dispersion, while a shorter wetting time reflects better wettability. The optimal ratio is determined by assessing both factors, with the ideal combination being the one that achieves the maximum suspension rate and the shortest wetting time for the specific formulation.
-                        </p>
-                        <p style="padding-left: 3vh;"><b>5. Stabilizers:</b> The stabilizers contribute to making the composition a homogeneous mixture by not letting any components settle down increasing stability. It ensures the protection of microbes from oxidative damage and any environmental stress during storage, hence increasing the shelf life. It also enhances dispersion ability and adhesion to the plant leaf surface.
-                        </p>
-                        <p style="padding-left: 3vh;"><b>6. UV Protectant:</b> Protects the microbial agent against UV radiation when exposed to sunlight which might affect its efficacy. It also prevents the UV rays from degrading the components, preserving the integrity of all active ingredients. 
-                        </p>
-                        <p>
-                            The following are the potential compounds or materials used as additives, and other agents required to achieve the optimum formulation for the product.</p>
-                        <center><iframe style="width: 32vw;height: 67vh;"src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQX0LDf_5k5Hyd1Fln-m33aH3hzxm03hanrhvq_yHudsOjYlbjMm4ZnTRsRLHeRKoZUkl6M9yHVjftf/pubhtml?gid=40857538&amp;single=true&amp;widget=true&amp;headers=false"></iframe></center>
-                            <h3>Formulation Breakdown</h3>
-                            <p>The composition of the proposed formulation for our wettable powder needs to be optimized with each component present in precise proportions to serve its intended purpose. The proportions for optimal production are given below.
-                            </p>
-                            <center><iframe style="width: 28vw;height: 35vh;"src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQX0LDf_5k5Hyd1Fln-m33aH3hzxm03hanrhvq_yHudsOjYlbjMm4ZnTRsRLHeRKoZUkl6M9yHVjftf/pubhtml?gid=279357154&amp;single=true&amp;widget=true&amp;headers=false"></iframe></center>
-                                <p>Cumate function in Kill Switch doctumentation here</p> 
-                                <p><i>The estimated proportions of the wetting agent, stabilizer, and UV protectant will be determined after further experimentation and field testing. 
-                                    </i></p>
-                            
-                </section>
-                <section id="section-4">
-                    <h2>PRODUCTION</h2>
-                    <p>The production process for the Bacillus subtilis wettable powder focuses on achieving the optimal spore density, quality control, and ensuring that the final product remains stable during storage and effective when dispersed in the field. The following steps outline the production of the wettable powder.</p>
-                    <p style="padding-left: 3vh;"><b>1. Spore Density Optimization:</b> To ensure effective application in the field, the wettable powder must maintain a high spore density. This allows for a high concentration of Bacillus subtilis in each application, maximizing its ability to combat CLR.</p>
-                    <center><iframe style="width: 25vw;height: 34vh;"src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQX0LDf_5k5Hyd1Fln-m33aH3hzxm03hanrhvq_yHudsOjYlbjMm4ZnTRsRLHeRKoZUkl6M9yHVjftf/pubhtml?gid=290027075&amp;single=true&amp;widget=true&amp;headers=false"></iframe></center>
-                    <p style="padding-left: 3vh;"><b>2. Production Steps and Process Flow</b></p>
-                    <p style="padding-left: 6vh;"><b>1. Fermentation Process</b><br>After the fermentation period, the spores are harvested using centrifugation or filtration to separate them from the culture medium.</p>
-                    <p style="padding-left: 6vh;"><b>2. Harvesting</b><br><i>Bacillus subtilis</i> is cultured in bioreactors under optimized conditions (pH 6.5-7.0, temperature 30-37°C) for 24-48 hours to induce sporulation.
-                        </p>
-                        <p style="padding-left: 6vh;"><b>3. Drying Process</b><br>The spore concentrate undergoes either spray drying or freeze drying to remove moisture while maintaining spore viability. </p>
-                        <p style="padding-left: 6vh;"><b>4. Formulation</b><br>The dried spores are blended with inert carriers (e.g., kaolin clay or silica) to create the wettable powder formulation. Dispersing agents such as sodium lignosulfonate are added to ensure smooth suspension in water during application. Cumate (p-isopropyl benzoate) is a biodegradable, membrane-permeative chemical that can easily enter bacterial cells without transporters. It is non-toxic to Bacillus subtilis and is not known to have any negative effects on the coffee plant itself. To trigger the kill switch mechanism in the bacteria, it can be added to the wettable powder formulation in the form of methyl cumate powder.  (See Formulation in detail above)
-                        </p>
-                        <p style="padding-left: 9vh;"><b>A. Dry mixing and Addition of Additives</b><br>Dry mixing is a critical process where each component of the formulation—whether it's the active ingredient or inert materials like carriers, dispersants, or wetting agents is finely pulverized to achieve a consistent particle size. This fine powder ensures uniform distribution of all ingredients when applied or suspended in water and helps achieve homogeneity. Specific additives are incorporated to enhance the overall performance of the wettable powder.
-                        </p>
-                        <p style="padding-left: 9vh;"><b>B. Sieving</b><br>Sieving is the process of passing the mixed powder through a fine mesh or sieve to ensure uniform particle size. This is crucial for maintaining the quality, consistency, and effectiveness of the application.</p>
-                        <p style="padding-left: 6vh;"><b>5. Quality Control</b><br>The final wettable powder is tested for spore density, homogeneity, and viability to ensure that the product meets field-use standards. 
-                        </p>    
-                        <p style="padding-left: 6vh;"><b>6. Packaging</b><br>The product is packaged in moisture-resistant bags with proper labeling, including storage instructions to ensure a long shelf-life (12-24 months under optimal conditions).</p>                 
-                        <h3>A Brief Outline of the Production Steps</h3>
-                        <center> <iframe style="width: 23vw;height: 30vh;"src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQX0LDf_5k5Hyd1Fln-m33aH3hzxm03hanrhvq_yHudsOjYlbjMm4ZnTRsRLHeRKoZUkl6M9yHVjftf/pubhtml?gid=1403847844&amp;single=true&amp;widget=true&amp;headers=false"></iframe></center>
-                    <h3>WETTABLE POWDER APPLICATION GUIDELINES</h3>
-                    <p>This powder must be dispersed into the water before use and applied using appropriate equipment to ensure even distribution over the coffee plant foliage. Below are the proposed guidelines for the correct use of the wettable powder product. After further experimentation and field studies, exact parameters (spore concentration, frequency of application, etc.) will be defined.
-                    </p>
-                    <center><iframe style="width: 34vw;height: 54vh;"src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQX0LDf_5k5Hyd1Fln-m33aH3hzxm03hanrhvq_yHudsOjYlbjMm4ZnTRsRLHeRKoZUkl6M9yHVjftf/pubhtml?gid=735543226&amp;single=true&amp;widget=true&amp;headers=false"></iframe></center>
-                    <p><i>
-                        <b>Note:</b> Ensure that the lower surfaces (abaxial) of the leaves are adequately covered. Apply early in the morning or late in the afternoon to reduce the risk of evaporation and maximize the product's effect.</i></p>
-                        <h3>Cost Effectiveness: Comparative Breakdown of Wettable Powder, Traditional Fungicides, and Bordeaux Mixture</h3>
-                        <center><iframe style="width: 43vw;height: 63vh;"src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQX0LDf_5k5Hyd1Fln-m33aH3hzxm03hanrhvq_yHudsOjYlbjMm4ZnTRsRLHeRKoZUkl6M9yHVjftf/pubhtml?gid=682490686&amp;single=true&amp;widget=true&amp;headers=false"></iframe></center>
-                        <h3>Financial Comparison</h3>
-                    <center><iframe style="width: 35vw;height: 44vh;"src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQX0LDf_5k5Hyd1Fln-m33aH3hzxm03hanrhvq_yHudsOjYlbjMm4ZnTRsRLHeRKoZUkl6M9yHVjftf/pubhtml?gid=306474334&amp;single=true&amp;widget=true&amp;headers=false"></iframe></center>
-                        <h3>Product Summary:
-                        </h3>
-                        <p>This <i>Bacillus subtilis</i> wettable powder is an eco-friendly, biocontrol solution designed specifically to combat Coffee Leaf Rust (CLR). Its high spore density ensures potent activity against <i>Hemileia vastatrix</i>, while its formulation as a wettable powder allows for easy integration into standard agricultural practices. With proper application techniques and storage, the product offers long-term viability and effectiveness in the field.
-                        </p>
-                        <p>
-                            By following the outlined <i>application guidelines, and production steps, and ensuring proper formulation</i> with the right inert carriers, the wettable powder can be successfully deployed to protect coffee crops from devastating rust infections.
-
-                        </p>
-                        <center><figure>
-                            <img  style="width: 35vw;height: auto; padding: 5vh;" src="https://static.igem.wiki/teams/5141/poc/hr-diagramatic-representation.jpg" alt="">
-                            <figcaption style="font-size: 1.5vh"><i>Fig.  Homologous Recombination </i> </figcaption>
-                        </figure></center>
-</section>
-<section id="section-5">
-    <h2>References</h2>
-    <ol>
-        <li>
-            Li, X., & Heyer, W. (2007). Homologous recombination in DNA repair and DNA damage tolerance. <em>Cell Research</em>, 18(1), 99-113. 
-            <a href="https://doi.org/10.1038/cr.2008.1" target="_blank">https://doi.org/10.1038/cr.2008.1</a>
-        </li>
-        <li>
-            Krejci, L., Altmannova, V., Spirek, M., & Zhao, X. (2012). Homologous recombination and its regulation. <em>Nucleic Acids Research</em>, 40(13), 5795-5818. 
-            <a href="https://doi.org/10.1093/nar/gks270" target="_blank">https://doi.org/10.1093/nar/gks270</a>
-        </li>
-        <li>
-            Wang, Y., Weng, J., Waseem, R., Yin, X., Zhang, R., & Shen, Q. (2012). Bacillus subtilis genome editing using ssDNA with short homology regions. <em>Nucleic Acids Research</em>, 40(12), e91. 
-            <a href="https://doi.org/10.1093/nar/gks248" target="_blank">https://doi.org/10.1093/nar/gks248</a>
-        </li>
-        <li>
-            Gao, L., She, M., Shi, J., Cai, D., Wang, D., Xiong, M., Shen, G., Gao, J., Zhang, M., Yang, Z., & Chen, S. (2022). Enhanced production of iturin A by strengthening fatty acid synthesis modules in Bacillus amyloliquefaciens. <em>Frontiers in Bioengineering and Biotechnology</em>, 10, 974460. 
-            <a href="https://doi.org/10.3389/fbioe.2022.974460" target="_blank">https://doi.org/10.3389/fbioe.2022.974460</a>
-        </li>
-        <li>
-            Dang, Y., Zhao, F., Liu, X. et al. (2019). Enhanced production of antifungal lipopeptide iturin A by Bacillus amyloliquefaciens LL3 through metabolic engineering and culture conditions optimization. <em>Microbial Cell Factories</em>, 18, 68. 
-            <a href="https://doi.org/10.1186/s12934-019-1121-1" target="_blank">https://doi.org/10.1186/s12934-019-1121-1</a>
-        </li>
-        <li>
-            Bisicchia, P., Botella, E., & Devine, K. M. (2010). Suite of novel vectors for ectopic insertion of GFP, CFP and IYFP transcriptional fusions in single copy at the amyE and bglS loci in Bacillus subtilis. <em>Plasmid</em>, 64(3), 143–149. 
-            <a href="https://doi.org/10.1016/j.plasmid.2010.06.002" target="_blank">https://doi.org/10.1016/j.plasmid.2010.06.002</a>
-        </li>
-    </ol>
-</section>
-  </div>
-</div>
+            </div>
+        </div>
                     
     </main>
     <footer class="myFooter">
