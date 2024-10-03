@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Model</title>
+    <link href="https://fonts.googleapis.com/css2?family=Titan+One&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="../styling.css">
+    <script defer src="../script.js"></script>
+
+</head>
+<body>
+    <nav class="navbar">
+        <img src="https://static.igem.wiki/teams/5141/images/caapi.webp" alt="" style="height: 10vh;width: auto;">
+        <div class="navbar-content">
+            <div class="navbar-links">
+                <div class="dropdown">
+                    <a href="#" target="_blank">Project</a>
+                    <div class="dropdown-content">
+                        <a href="#" target="_blank">Description</a>
+                        <a href="#" target="_blank">Background</a>
+                        <a href="#" target="_blank">Design</a>
+                        <a href="#" target="_blank">Proof of Concept</a>
+                        <a href="#" target="_blank">Implementation</a>
+                        <a href="#" target="_blank">Biosafety</a>
+                        <a href="#" target="_blank">Contribution</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <a href="#" target="_blank">Wet Lab</a>
+                    <div class="dropdown-content">
+                        <a href="#" target="_blank">Engineering </a>
+                        <a href="#" target="_blank">Materials</a>
+                        <a href="#" target="_blank">Notebook</a>
+                        <a href="#" target="_blank">Protocols</a>
+                        <a href="#" target="_blank">Measurement</a>
+                        <a href="#" target="_blank">Lab Safety</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <a href="#" target="_blank">Dry Lab</a>
+                    <div class="dropdown-content">
+                        <a href="#" target="_blank">Modelling</a>
+                        <a href="#" target="_blank">Parts</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <a href="#" target="_blank">Software</a>
+                </div>
+                <div class="dropdown">
+                    <a href="#" target="_blank">Human Practices</a>
+                    <div class="dropdown-content">
+                        <a href="#" target="_blank">iHP</a>
+                        <a href="#" target="_blank">Outreach & Collaboration</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <a href="#" target="_blank">Education</a>
+                </div>
+                <div class="dropdown">
+                    <a href="#" target="_blank">Team</a>
+                    <div class="dropdown-content">
+                        <a href="#" target="_blank">Meet the Team</a>
+                        <a href="#" target="_blank">Attributions</a>
+                        <a href="#" target="_blank">Medals</a>
+                    </div>
+                </div>
+            </div>
+            <style>
+                
+            </style>
+        </div>
+        <div class="navbar-icons">
+            <a href="https://www.instagram.com/manipalbiomachines?igsh=MWo3MHpoNXBpcHhmdQ==" target="_blank"><i style="height: 3vh;width: auto;color:#3D4A2D;padding-bottom: 0vh;" data-lucide="instagram"></i></a>
+            <a href="https://www.linkedin.com/company/manipal-biomachines/" target="_blank"><i style="height: 3vh;width: auto;color:#3D4A2D;padding-bottom: 0vh;" data-lucide="linkedin"></i></a>
+            <a href="https://manipalbiomachinesmahe.com" target="_blank"><img style="height: 3vh;width: auto;color:#3D4A2D" src="https://static.igem.wiki/teams/5141/images/webdevicon.webp" alt=""></a>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <h1 style="margin-bottom: 30vh;">Model</h1>
+        <div class="scroll-indicator">↓</div>
+    </header>
+
+    <main class="container main-content">
+        <aside class="table-of-contents" style="width: 15vw;">
+            <h2>Table of Contents</h2>
+            <ul>
+                <li><a href="#section-1"  style="margin-top: 0vh;">Introduction</a></li>
+                <li><a href="#section-2">Docking</a></li>
+                <li><a href="#section-3">References</a></li>
+            </ul>
+        </aside>
+
+        <div class="content-panel">
+            <div class="research-content">
+                <section id="section-1">
+<p>
+  We simulated P43, a constitutive promoter, constitutive gene expression using ODE. 
+</p>
+<p>
+  A model for constitutive gene expression was developed in MATLAB utilizing ordinary differential equations (ODEs). The core components of the system, namely mRNA and protein species, were defined to reflect the gene expression dynamics. The transcription process was implemented as a first-order reaction, wherein mRNA is produced at a constant transcription rate, characteristic of constitutive expression. Additionally, the degradation of both mRNA and protein was incorporated as first-order processes, each defined by their respective degradation rates. The system of ODEs was formulated to describe the dynamics of mRNA and protein concentrations over time. MATLAB's ode45 solver was employed to simulate the model across a specified time span, enabling the analysis of the resulting mRNA and protein concentrations. The outputs were plotted to visualize the behavior of the gene expression system. 
+</p>
+<p>
+  The data for rate constants were derived from the results in the paper “Engineering an inducible gene expression system for Bacillus subtilis from a strong constitutive promoter and a theophylline-activated synthetic riboswitch” [4].
+</p>
+                    <center><figure>
+                        <img  style="width: 25vw;height: auto; padding: 0vh;" src="https://static.igem.wiki/teams/5141/model/model-for-constitutive-gene-expression.webp" alt="">
+                        <figcaption style="font-size: 1.5vh"><i>Fig: Diagram of the model for constitutive gene expression </i> </figcaption>
+                    </figure></center>
+                    <center><figure>
+                        <img  style="width: 35vw;height: auto; padding: 0vh;" src="https://static.igem.wiki/teams/5141/model/graph-for-constitutive-gene-expression.webp" alt="">
+                        <figcaption style="font-size: 1.5vh"><i>Fig: The graph is obtained for proteins from constitutive gene expression from the model’s simulation.  X-axis is time in hours and Y-axis is number of molecules.  </i> </figcaption>
+                    </figure></center>
+                    <center><figure>
+                        <img  style="width: 35vw;height: auto; padding: 0vh;" src="https://static.igem.wiki/teams/5141/model/equations-for-constitutive-gene-expression.webp" alt="">
+                        <figcaption style="font-size: 1.5vh"><i>Fig: Equations used for making the model. </i> </figcaption>
+                    </figure></center>
+                    <h2>Induced Gene Expression Simulation for PbacA</h2>
+<p>
+  For PbacA, a repressible promoter, induced gene expression using ODE was simulated. 
+</p>
+<p>
+  A model for induced gene expression was developed in MATLAB using ordinary differential equations (ODEs) to capture the dynamics of gene activation in response to an inducer. The system comprised key components, including mRNA and protein species, as well as the transcription factor (inducer) concentration. The transcription process was defined using a Hill equation to account for the cooperative binding of the transcription factor to the promoter, reflecting the dynamics of induced expression. Additionally, the degradation of mRNA and protein was included as first-order processes, each characterized by their respective degradation rates. A system of ODEs was formulated to describe the time-dependent behavior of mRNA and protein concentrations, influenced by the varying concentration of the inducer. The model was simulated over a specified time span using MATLAB's <code>ode45</code> solver, allowing for the analysis of the resulting mRNA and protein levels in response to changes in the inducer concentration. The simulation outputs were plotted to visualize the dynamics of the gene expression system. 
+</p>
+<p>
+  The data used for the model was derived from the results obtained in the paper - “Construction and Characterization of a Gradient Strength Promoter Library for Fine-Tuned Gene Expression in Bacillus licheniformis.” [5]
+</p>
+<center><figure>
+    <img  style="width: 25vw;height: auto; padding: 0vh;" src="https://static.igem.wiki/teams/5141/model/model-for-induced-gene-expression.webp" alt="">
+    <figcaption style="font-size: 1.5vh"><i>Fig : Diagram of the induced  gene expression model. </i> </figcaption>
+</figure></center>
+<center><figure>
+    <img  style="width: 35vw;height: auto; padding: 0vh;" src="https://static.igem.wiki/teams/5141/model/graph-for-induced-gene-expression.webp" alt="">
+    <figcaption style="font-size: 1.5vh"><i>Fig: The graph obtained for proteins translated in induced gene expression from the model’s simulation.  X-axis is time in hours and Y-axis is number of molecules. </i> </figcaption>
+</figure></center>
+<center><figure>
+    <img  style="width: 35vw;height: auto; padding: 0vh;" src="https://static.igem.wiki/teams/5141/model/equations-for-induced-gene-expression.webp" alt="">
+    <figcaption style="font-size: 1.5vh"><i>Fig:  Equations for the induced gene expression model </i> </figcaption>
+</figure></center>
+
+                    <p>We intend to replace this natural promoter with the synthetic cumate induced promoter constructed by combining the strong constitutive <i>Bacillus</i> promoter <i>Pveg</i> with regulatory elements of the<i>Pseudomonas putida, CymR repressor</i>, and its operator sequence CuO. [2] </p>
+                    <p>For our implementation, cumate will be added into our formulation of wettable powder which will be taken up by our chassis passively. The formulation (chassis + Cumate) will be sprayed onto the coffee leaves in the plantation to distribute the chassis for its antifungal action against the HV. Once the Cumate has degraded or washed away the bacteria will no longer be able to survive in that environment. Cumate is a biodegradable inexpensive lab chemical. It is degraded by several microorganisms especially alphaproteobacterial like <i>Rhodococcus,Pseudomonas, and Sphingomonas</i> and is not toxic to the environment. [3][4][5]  </p>
+                    <!-- <img  style="width:40vw;height: auto;padding-left: 20vh;padding-right: 15vh;" src="https://static.igem.wiki/teams/5141/biosafety/kill-switch-1.webp" > -->
+                    </section>
+
+                    <section id="section-2">
+                        <h2>Docking</h2>
+                        <h2>Promoter Strength and Sigma Factor Analysis</h2>
+                        <p>
+                          A promoter's strength is primarily classified by the stability of its open complex and the binding affinity to the RNAP. The binding affinity is measured through docking with the sigma factors. 
+                        </p>
+                        <p>
+                          Since the structure for Sigma B + RNAP (holoenzyme) was not available on any available databases, we superimposed the structure of Holoenzyme Sigma A onto Sigma B, whose structure was predicted using AlphaFold, without the conformational changes due to RNAP <sup>[3]</sup>. 
+                        </p>
+                        <p>
+                          The structure for holoenzyme Sigma A was obtained from the PDB database (7CKQ). This was visualized using PyMOL alongside the RNA polymerase to assess the similarity between Sigma B and Sigma A. This analysis indicated whether the conformational change in the sigma factor was accounted for in the Sigma B obtained from the PDB database. 
+                        </p>
+                       
+                        <h2>Core Promoter Visualization and Docking Analysis</h2>
+                        <p>
+                          Core promoter regions of P43 optimized, P43 unoptimized, PbacA optimized, and PbacA unoptimized were visualized using PyMOL. In <em>Bacillus subtilis</em>, DNA is in the A form during the sporulation stage; hence, PbacA fragments were modeled as A helices, while P43 fragments were modeled as B helices <sup>[1][2]</sup>. 
+                        </p>
+                        <p>
+                          Based on the superimposition of Sigma A (272 residues) onto Sigma B (262 residues), 233 residues were structurally aligned. Due to the high similarity between the two structures, we assume the two structures to be in a similar conformational state. 
+                        </p>
+                        <p>
+                          Docking of sigma factors to the core regions of the promoters P43 (both unoptimized and optimized) and PbacA (both unoptimized and optimized) at the –10 and –35 regions was performed to evaluate whether the optimization exhibited improved binding affinity towards the sigma factors, which would imply stronger gene expression. 
+                        </p>
+                        <p>
+                          The optimization performed involved changing the –35 and –10 regions to the predicted consensus sequence. 
+                        </p>
+                        <p>
+                          P43 unoptimized and optimized core region fragments were docked with Sigma Factor A from its RNAP holoenzyme (PDB ID: 7CKQ). The same two fragments were also docked with Sigma Factor B, whose structure was obtained from AlphaFold (AF-A0A6M4JFM2-F1-v4). PbacA optimized and unoptimized core regions were docked with Sigma Factor B.
+                        </p>
+                        <center>
+                        </figure>
+                            <img  style="width: 35vw;height: auto; padding: 0vh;" src="https://static.igem.wiki/teams/5141/model/msa-p43.webp" alt="">
+                            <figcaption style="font-size: 1.5vh"><i>Fig. CymR stays bound to the operator repressing the promoter (-41:+8). Cumate lifts the bound repressor in the presence of which galE is expressed </i> </figcaption>
+                        </figure></center>
+                        <center><figure>
+                            <img  style="width: 35vw;height: auto; padding: 0vh;" src="https://static.igem.wiki/teams/5141/model/msa-pbaca.webp" alt="">
+                            <figcaption style="font-size: 1.5vh"><i>Fig: difference between PbacA optimised and pbacA unoptimised </i> </figcaption>
+                        </figure></center>
+                        <h2>Docking Scores and Binding Affinities</h2>
+<p>
+  The docking score directly correlates with binding affinity. More negative Gibbs' free energy implies stronger binding. From the docking scores, we can see that:
+</p>
+<ul>
+  <li>P43 unoptimized showed better binding affinity compared to P43 optimized with Sigma A and Sigma B.</li>
+  <li>P43 optimized shows more binding affinity towards Sigma B.</li>
+  <li>PbacA optimized core regions show better binding affinity towards Sigma Factor B.</li>
+  <li>The binding affinity of PbacA optimized was better than that of P43 unoptimized and P43 optimized, while PbacA unoptimized had a lesser binding affinity compared to P43 unoptimized with Sigma Factor B.</li>
+</ul>
+<center>
+<table border="1">
+    <caption><strong>P43 Optimised + Sigma A</strong></caption>
+    <thead>
+      <tr>
+        <th>Rank</th>
+        <th>1</th>
+        <th>2</th>
+        <th>3</th>
+        <th>4</th>
+        <th>5</th>
+        <th>6</th>
+        <th>7</th>
+        <th>8</th>
+        <th>9</th>
+        <th>10</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Docking Score</td>
+        <td>-204.52</td>
+        <td>-196.27</td>
+        <td>-195.33</td>
+        <td>-189.22</td>
+        <td>-188.04</td>
+        <td>-187.96</td>
+        <td>-186.45</td>
+        <td>-186.07</td>
+        <td>-183.36</td>
+        <td>-182.8</td>
+      </tr>
+      <tr>
+        <td>Confidence Score</td>
+        <td>0.7485</td>
+        <td>0.7161</td>
+        <td>0.7123</td>
+        <td>0.6866</td>
+        <td>0.6815</td>
+        <td>0.6812</td>
+        <td>0.6746</td>
+        <td>0.6729</td>
+        <td>0.6609</td>
+        <td>0.6584</td>
+      </tr>
+      <tr>
+        <td>Ligand rmsd (Å)</td>
+        <td>301.14</td>
+        <td>253</td>
+        <td>347.4</td>
+        <td>274.38</td>
+        <td>289.19</td>
+        <td>335.12</td>
+        <td>284.53</td>
+        <td>324.15</td>
+        <td>254.53</td>
+        <td>308.5</td>
+      </tr>
+      
+    </tbody>
+  </table>
+  
+  <br>
+
+  <table border="1">
+    <caption><strong>P43 Unoptimised + Sigma A</strong></caption>
+    <thead>
+      <tr>
+        <th>Rank</th>
+        <th>1</th>
+        <th>2</th>
+        <th>3</th>
+        <th>4</th>
+        <th>5</th>
+        <th>6</th>
+        <th>7</th>
+        <th>8</th>
+        <th>9</th>
+        <th>10</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Docking Score</td>
+        <td>-243.3</td>
+        <td>-197.63</td>
+        <td>-194.77</td>
+        <td>-191.9</td>
+        <td>-188.94</td>
+        <td>-188.9</td>
+        <td>-186.9</td>
+        <td>-185.01</td>
+        <td>-184.58</td>
+        <td>-183.74</td>
+      </tr>
+      <tr>
+        <td>Confidence Score</td>
+        <td>0.866</td>
+        <td>0.7216</td>
+        <td>0.71</td>
+        <td>0.698</td>
+        <td>0.6854</td>
+        <td>0.6852</td>
+        <td>0.6766</td>
+        <td>0.6682</td>
+        <td>0.6663</td>
+        <td>0.6626</td>
+      </tr>
+      <tr>
+        <td>Ligand rmsd (Å)</td>
+        <td>254.45</td>
+        <td>304.65</td>
+        <td>333.12</td>
+        <td>270.16</td>
+        <td>264.77</td>
+        <td>247.3</td>
+        <td>277.32</td>
+        <td>272.69</td>
+        <td>300.31</td>
+        <td>315.96</td>
+      </tr>
+      
+    </tbody>
+  </table>
+  <br>
+  <table border="1">
+  <caption><strong>P43 Unoptimised + Sigma B</strong></caption>
+  <thead>
+    <tr>
+      <th>Rank</th>
+      <th>1</th>
+      <th>2</th>
+      <th>3</th>
+      <th>4</th>
+      <th>5</th>
+      <th>6</th>
+      <th>7</th>
+      <th>8</th>
+      <th>9</th>
+      <th>10</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Docking Score</td>
+      <td>-240.37</td>
+      <td>-239.03</td>
+      <td>-213.4</td>
+      <td>-204.19</td>
+      <td>-202.98</td>
+      <td>-201.88</td>
+      <td>-201.33</td>
+      <td>-199.87</td>
+      <td>-195</td>
+      <td>-192.06</td>
+    </tr>
+    <tr>
+      <td>Confidence Score</td>
+      <td>0.859</td>
+      <td>0.8558</td>
+      <td>0.7804</td>
+      <td>0.7472</td>
+      <td>0.7426</td>
+      <td>0.7384</td>
+      <td>0.7363</td>
+      <td>0.7305</td>
+      <td>0.7109</td>
+      <td>0.6987</td>
+    </tr>
+    <tr>
+      <td>Ligand rmsd (Å)</td>
+      <td>84.62</td>
+      <td>81.51</td>
+      <td>55.12</td>
+      <td>83.81</td>
+      <td>114.25</td>
+      <td>76.66</td>
+      <td>114.28</td>
+      <td>71.45</td>
+      <td>109.95</td>
+      <td>91.42</td>
+    </tr>
+  </tbody>
+</table>
+<br>
+<table border="1">
+    <caption><strong>P43 Optimised + Sigma B</strong></caption>
+    <thead>
+      <tr>
+        <th>Rank</th>
+        <th>1</th>
+        <th>2</th>
+        <th>3</th>
+        <th>4</th>
+        <th>5</th>
+        <th>6</th>
+        <th>7</th>
+        <th>8</th>
+        <th>9</th>
+        <th>10</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Docking Score</td>
+        <td>-235.5</td>
+        <td>-234.24</td>
+        <td>-214.96</td>
+        <td>-213.53</td>
+        <td>-212.63</td>
+        <td>-204.04</td>
+        <td>-203.81</td>
+        <td>-203.77</td>
+        <td>-199.03</td>
+        <td>-199.01</td>
+      </tr>
+      <tr>
+        <td>Confidence Score</td>
+        <td>0.8468</td>
+        <td>0.8435</td>
+        <td>0.7857</td>
+        <td>0.7808</td>
+        <td>0.7777</td>
+        <td>0.7466</td>
+        <td>0.7458</td>
+        <td>0.7456</td>
+        <td>0.7272</td>
+        <td>0.7271</td>
+      </tr>
+      <tr>
+        <td>Ligand rmsd (Å)</td>
+        <td>113.89</td>
+        <td>101.09</td>
+        <td>120.59</td>
+        <td>52.72</td>
+        <td>107.89</td>
+        <td>116.65</td>
+        <td>110.12</td>
+        <td>93.94</td>
+        <td>137.24</td>
+        <td>82.15</td>
+      </tr>
+    </tbody>
+  </table>
+  
+<br>
+<table border="1">
+    <caption><strong>PbacA Unoptimised + Sigma B</strong></caption>
+    <thead>
+      <tr>
+        <th>Rank</th>
+        <th>1</th>
+        <th>2</th>
+        <th>3</th>
+        <th>4</th>
+        <th>5</th>
+        <th>6</th>
+        <th>7</th>
+        <th>8</th>
+        <th>9</th>
+        <th>10</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Docking Score</td>
+        <td>-229.9</td>
+        <td>-227.85</td>
+        <td>-227.35</td>
+        <td>-225.14</td>
+        <td>-223.5</td>
+        <td>-217.98</td>
+        <td>-212.95</td>
+        <td>-210.68</td>
+        <td>-210.45</td>
+        <td>-208.53</td>
+      </tr>
+      <tr>
+        <td>Confidence Score</td>
+        <td>0.8317</td>
+        <td>0.8259</td>
+        <td>0.8245</td>
+        <td>0.818</td>
+        <td>0.8131</td>
+        <td>0.7957</td>
+        <td>0.7789</td>
+        <td>0.7709</td>
+        <td>0.7701</td>
+        <td>0.7633</td>
+      </tr>
+      <tr>
+        <td>Ligand rmsd (Å)</td>
+        <td>65.8</td>
+        <td>80.98</td>
+        <td>68.21</td>
+        <td>71.54</td>
+        <td>72.25</td>
+        <td>79.69</td>
+        <td>71.46</td>
+        <td>55.29</td>
+        <td>72.97</td>
+        <td>81.29</td>
+      </tr>
+    </tbody>
+  </table>
+<br>
+<table border="1">
+    <caption><strong>PbacA Optimised + Sigma B</strong></caption>
+    <thead>
+      <tr>
+        <th>Rank</th>
+        <th>1</th>
+        <th>2</th>
+        <th>3</th>
+        <th>4</th>
+        <th>5</th>
+        <th>6</th>
+        <th>7</th>
+        <th>8</th>
+        <th>9</th>
+        <th>10</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Docking Score</td>
+        <td>-245.43</td>
+        <td>-225.89</td>
+        <td>-207.36</td>
+        <td>-204.87</td>
+        <td>-203.11</td>
+        <td>-200.97</td>
+        <td>-200.26</td>
+        <td>-199.02</td>
+        <td>-198.85</td>
+        <td>-197.83</td>
+      </tr>
+      <tr>
+        <td>Confidence Score</td>
+        <td>0.8709</td>
+        <td>0.8202</td>
+        <td>0.759</td>
+        <td>0.7498</td>
+        <td>0.7431</td>
+        <td>0.7349</td>
+        <td>0.7321</td>
+        <td>0.7272</td>
+        <td>0.7265</td>
+        <td>0.7224</td>
+      </tr>
+      <tr>
+        <td>Ligand rmsd (Å)</td>
+        <td>232.69</td>
+        <td>236.55</td>
+        <td>267.44</td>
+        <td>244.18</td>
+        <td>219.93</td>
+        <td>252.69</td>
+        <td>266.93</td>
+        <td>254.95</td>
+        <td>212.36</td>
+        <td>237.3</td>
+      </tr>
+    </tbody>
+  </table>
+<br>  
+</center> 
+
+<p>
+  <strong>Conclusion:</strong> From the results, we concluded that the optimization for P43 is not effective, while the optimization of PbacA was effective and perhaps necessary for the functioning of our dual promoter.
+</p>
+
+                        </section>
+
+                <section id="section-3">
+                    <h2>References</h2>
+                    <ol>
+                        <li>
+                          Setlow, P. (1992). DNA in dormant spores of Bacillus species is in an A-like conformation. Molecular Microbiology, 6(5), 563–567. <a href="https://doi.org/10.1111/j.1365-2958.1992.tb01501.x" target="_blank">https://doi.org/10.1111/j.1365-2958.1992.tb01501.x</a>
+                        </li>
+                        <li>
+                          Jameson, K. H., & Wilkinson, A. J. (2017). Control of Initiation of DNA Replication in Bacillus subtilis and Escherichia coli. Genes, 8(1). <a href="https://doi.org/10.3390/genes8010022" target="_blank">https://doi.org/10.3390/genes8010022</a>
+                        </li>
+                        <li>
+                          Fang, C.L., Zhang, Y. The cryo-EM structure of B. subtilis BmrR transcription activation complex PDB DOI: <a href="https://doi.org/10.2210/pdb7CKQ/pdb" target="_blank">https://doi.org/10.2210/pdb7CKQ/pdb</a>
+                        </li>
+                        <li>
+                          Cui, W., Han, L., Cheng, J., Liu, Z., Zhou, L., Guo, J., & Zhou, Z. (2016). Engineering an inducible gene expression system for Bacillus subtilis from a strong constitutive promoter and a theophylline-activated synthetic riboswitch. Microbial Cell Factories, 15(1). <a href="https://doi.org/10.1186/s12934-016-0599-z" target="_blank">https://doi.org/10.1186/s12934-016-0599-z</a>
+                        </li>
+                        <li>
+                          Rao, Y., Li, P., Xie, X., Li, J., Liao, Y., Ma, X., Cai, D., & Chen, S. (2021). Construction and Characterization of a Gradient Strength Promoter Library for Fine-Tuned Gene Expression in Bacillus licheniformis. ACS Synthetic Biology, 10(9), 2331–2339. <a href="https://doi.org/10.1021/acssynbio.1c00242" target="_blank">https://doi.org/10.1021/acssynbio.1c00242</a>
+                        </li>
+                      </ol>
+                      </section>
+            </div>
+        </div>
+                    
+    </main>
+    <footer class="myFooter">
+        <div class="footer-content">
+            <div class="footer-section sponsors">
+                <h2 style="color: #213129;font-size: 6vh;margin: 0;padding-bottom: 1vh;font-family: 'Titan One', cursive;">Sponsors</h2>
+                <div class="sponsors-grid" style="padding-left: 5vw;">
+                    <img class="grid-item" style="height:11vh; width: auto; padding-left: 1vw;" src="https://static.igem.wiki/teams/5141/images/topleft.webp" alt="Sponsor 1">
+                    <img class="grid-item" style="height:10vh; width: auto;padding-right: 3vw;padding-top: 2vh;" src="https://static.igem.wiki/teams/5141/images/manipal.webp" alt="Sponsor 2">
+                    <img class="grid-item" style="height:7vh; width: auto;padding-left: 3vw;padding-top: 2vh;" src="https://static.igem.wiki/teams/5141/images/right-bottom.webp" alt="Sponsor 3">
+                    <img class="grid-item" style="height:4vh; width: auto;padding-top: 4vh;padding-right: 0vw;padding-left: 2vw;" src="https://static.igem.wiki/teams/5141/images/left-bottom.webp" alt="Sponsor 4">
+                    <img class="grid-item" style="height:6vh; width: auto;padding-top: 2.5vh;padding-right: 1vw;padding-left: 1vw;" src="https://static.igem.wiki/teams/5141/images/images-removebg-preview.webp" alt="Sponsor 4">
+                </div>
+            </div>
+            <div class="footer-divider"></div>
+            <div class="footer-section contact" style="color: #213129;margin-left: 5vw;">
+                <h2 style="font-size: 6vh;margin-bottom: 0;font-family: 'Titan One', cursive;">Contact Us</h2>
+                <div style="display: flex; justify-content: space-between; align-items: center;margin-left: 1vw;">
+                    <div style="width: 20vw;">
+                        <p style="font-size: 1.8vh;margin-top: 0;"><strong>Email:</strong> manipalbiomachines.igem@gmail.com</p>
+                        <p style="font-size: 1.8vh;"><strong>Address:</strong> <br>Project laboratory, Academic Block-2, Manipal Institute of Technology, MAHE, Eshwar Nagar, Manipal, Udupi, Karnataka, India - 576104 </p>
+                    </div>
+                </div>
+            </div>
+            <img style="width: 15vw; height: auto;margin-right: 7vw;" src="https://static.igem.wiki/teams/5141/images/igem-mit-mahe-logo.webp" alt="iGEM MIT">
+
+        </div>
+        <div class="last-one">
+            &copy; 2024- Content on this site is licensed under a Creative Commons Attribution 4.0 International license.
+        </div>
+    </footer>
+</body>
+</html>
