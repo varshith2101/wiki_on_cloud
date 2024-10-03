@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Engineering</title>
+    <link href="https://fonts.googleapis.com/css2?family=Titan+One&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="styling.css">
+    <script defer src="script.js"></script>
+
+</head>
+<body>
+    <nav class="navbar">
+        <img src="https://static.igem.wiki/teams/5141/images/caapi.webp" alt="" style="height: 10vh;width: auto;">
+        <div class="navbar-content">
+            <div class="navbar-links">
+                <div class="dropdown">
+                    <a href="#" target="_blank">Project</a>
+                    <div class="dropdown-content">
+                        <a href="#" target="_blank">Description</a>
+                        <a href="#" target="_blank">Background</a>
+                        <a href="#" target="_blank">Design</a>
+                        <a href="#" target="_blank">Proof of Concept</a>
+                        <a href="#" target="_blank">Implementation</a>
+                        <a href="#" target="_blank">Biosafety</a>
+                        <a href="#" target="_blank">Contribution</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <a href="#" target="_blank">Wet Lab</a>
+                    <div class="dropdown-content">
+                        <a href="#" target="_blank">Engineering </a>
+                        <a href="#" target="_blank">Materials</a>
+                        <a href="#" target="_blank">Notebook</a>
+                        <a href="#" target="_blank">Protocols</a>
+                        <a href="#" target="_blank">Measurement</a>
+                        <a href="#" target="_blank">Lab Safety</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <a href="#" target="_blank">Dry Lab</a>
+                    <div class="dropdown-content">
+                        <a href="#" target="_blank">Modelling</a>
+                        <a href="#" target="_blank">Parts</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <a href="#" target="_blank">Software</a>
+                </div>
+                <div class="dropdown">
+                    <a href="#" target="_blank">Human Practices</a>
+                    <div class="dropdown-content">
+                        <a href="#" target="_blank">iHP</a>
+                        <a href="#" target="_blank">Outreach & Collaboration</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <a href="#" target="_blank">Education</a>
+                </div>
+                <div class="dropdown">
+                    <a href="#" target="_blank">Team</a>
+                    <div class="dropdown-content">
+                        <a href="#" target="_blank">Meet the Team</a>
+                        <a href="#" target="_blank">Attributions</a>
+                        <a href="#" target="_blank">Medals</a>
+                    </div>
+                </div>
+            </div>
+            <style>
+                
+            </style>
+        </div>
+        <div class="navbar-icons">
+            <a href="https://www.instagram.com/manipalbiomachines?igsh=MWo3MHpoNXBpcHhmdQ==" target="_blank"><i style="height: 3vh;width: auto;color:#3D4A2D;padding-bottom: 0vh;" data-lucide="instagram"></i></a>
+            <a href="https://www.linkedin.com/company/manipal-biomachines/" target="_blank"><i style="height: 3vh;width: auto;color:#3D4A2D;padding-bottom: 0vh;" data-lucide="linkedin"></i></a>
+            <a href="https://manipalbiomachinesmahe.com" target="_blank"><img style="height: 3vh;width: auto;color:#3D4A2D" src="https://static.igem.wiki/teams/5141/images/webdevicon.webp" alt=""></a>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <h1 style="margin-bottom: 30vh;">Engineering</h1>
+        <div class="scroll-indicator">↓</div>
+    </header>
+
+    <main class="container main-content">
+        <aside class="table-of-contents" style="width: 15vw;">
+            <h2>Table of Contents</h2>
+            <ul>
+                <li><a href="#section-1"  style="margin-top: 0vh;">Single Promoter Replacement
+                </a></li>
+                <li><a href="#section-2">Design and Build of Dual Promoter</a></li>
+                <li><a href="#section-3">HPLC Method Development for Iturin A Separation</a></li>
+                <li><a href="#section-4">Quantification of Iturin A</a></li>
+                <li><a href="#section-5">References</a></li>
+            </ul>
+        </aside>
+
+        <div class="content-panel">
+            <div class="research-content">
+                <section id="section-1">
+                    <h2>Single Promoter Replacement</h2>
+                    <center><figure>
+                        <img  style="width: 55vw;height: auto; padding: 0vh;" src="https://static.igem.wiki/teams/5141/engineering/dbtl.webp" alt="">
+                        <figcaption style="font-size: 1.5vh"><i></i> </figcaption>
+                    </figure></center>
+                    <h2>Design</h2>
+                    <p>
+                        <em>Bacillus subtilis ATCC 13952</em> chassis inherently produces Iturin, making it a promising biocontrol agent against Coffee Leaf Rust (CLR), especially since it is native to coffee plantations which are the site of implementation. However, the bacteria’s natural promoter lacks the required strength to produce enough Iturin A to effectively fight CLR. Various indirect methods to trigger the operon were considered, such as:
+                    </p>
+                    <ol>
+                        <li>
+                            Reducing the metabolic load on bacteria by knocking out genes expressing compounds that do not aid in fungicidal activity or survival, such as Bacillaene <span class="reference">[1]</span>. This approach has been shown to improve lifespan, growth rates, and biomass levels in <em>Bacillus</em>. Our host, <em>Bacillus subtilis ATCC 13952</em>, partially produces the antifungal Fengycin due to an incomplete operon along with several other weak peptides and lipopeptides, all of which could be knocked out to increase the available precursors and the cell’s metabolic capacity <span class="reference">[2]</span>.
+                        </li>
+                        <li>
+                            Overexpressing the swarming motility protein (SwrC), a lipopeptide transporter involved in surfactin release and self-resistance, can enhance the release of Iturin, but its overexpression has shown only a low increase in extracellular Iturin concentrations (17.98%) <span class="reference">[3]</span>.
+                        </li>
+                        <li>
+                            Substituting and engineering stronger promoters through the construction of extensive promoter libraries are time-tested methods to reliably increase Iturin production to a large degree.
+                        </li>
+                        <li>
+                            Overexpressing comA and sigA, which are regulatory molecules part of the quorum sensing pathways seen in members of the <em>Bacillus</em> genus. ComA interacts with various proteins important for bacterial survival, such as (rpoA) RNA Polymerase Alpha subunit and (DegQ) Degradative enzyme protein Q <span class="reference">[4]</span>.
+                        </li>
+                    </ol>
+                    <p>
+                        Since our bacteria must survive in an uncontrolled environment, disrupting the delicate interplay in the quorum sensing pathways would negatively impact their survivability.
+                    </p>
+                    <p>
+                        Out of the various methods for overexpressing Iturin A that we reviewed, promoter replacement stood out as the simplest and most reliable approach. Thus, we turned our attention toward selecting or constructing a suitable promoter to replace Pitu, as the directionless construction of extensive promoter libraries was beyond the scope of our project.
+                    </p>
+                    <p>
+                        After a thorough literature review, we determined that PbacA, P43, and C2UP showed the most promising results toward improving Iturin A production <span class="reference">[4][5]</span>.
+                    </p>
+                    <p>
+                        Further review indicated that the C2UP promoter, a strong constitutive promoter, would significantly increase the metabolic load, reducing the bacterial lifespan and decreasing Iturin quantities <span class="reference">[1]</span>. The following factors need to be considered for overproduction:
+                    </p>
+                    <ol>
+                        <li>As metabolic load increases, bacterial lifespan decreases.</li>
+                        <li>Iturin A is naturally produced only during the stationary phase of growth.</li>
+                        <li>To ensure that Iturin is produced when in proximity to a fungus or stress-inducing factor, its trigger pathway needs to be conserved or reproduced, as the natural promoter is activated by stress.</li>
+                    </ol>
+                    <p>
+                        Keeping all these points in mind, we plan to replace the native promoter with a more potent promoter using homologous recombination in our host strain <em>Bacillus subtilis ATCC 13952</em>. This approach allows us to significantly increase the production of Iturin A without the need to transfer the entire operon into a plasmid, which would be impractical due to its size (38Kbp) and complexity.
+                    </p>
+                
+                    <h2>Build</h2>
+                    <p>
+                        Our aim was to have a weak continuous expression of Iturin A throughout the life of the cell and induce surges when encountering the fungi. P43, a constitutive promoter, and PbacA, a sigma B-dependent promoter, were studied by reading relevant literature. However, since P43 and PbacA are phase-localized promoters, we decided to design a dual promoter that provides an additive or multiplicative effect on the transcription of the downstream gene.
+                    </p>
+                    <p>
+                        The nature of the overall promoter will depend on the promoter placed closest to the gene <span class="reference">[6]</span>. To achieve our goal, we initially designed the dual promoter such that the inducible promoter was primary and the secondary promoter was constitutive.
+                    </p>
+                    <p>
+                        Placing P43 further away would weaken the promoter to moderate strength, ensuring a constant basal level expression of Iturin A during the growth phase of the bacteria, while maximizing Iturin production upon encounter with fungus. We ensured that the metabolic load on the organism is not too high to avoid toxicity while expressing Iturin A.
+                    </p>
+                    <p>
+                        Plasmid fragments and primers were designed for the same.
+                    </p>
+                
+                    <h2>Test</h2>
+                    <p>
+                        The design was tested in silico, following enzyme kinetics for the sigma factor-RNAP complex to predict inducible and constitutive promoter rates.
+                    </p>
+                    <p>
+                        In silico, the promoters showed phase-specific expression with P43, which, although constitutive, showed prominent expression in the growth phase, while PbacA, a repressible promoter, exhibited a spike in the stationary phase.
+                    </p>
+                
+                    <h2>Learn</h2>
+                    <p>
+                        P43, a constitutive promoter, was chosen as the primary promoter and has been proven to express majorly in the logarithmic phase of the <em>Bacillus</em> life cycle, thus causing a surge in the secretion of Iturin A during this phase. For the secondary promoter, the PbacA promoter was chosen to express the Iturin operon during the stationary phase while it is repressed by AbrB in the log phase <span class="reference">[7][8]</span>.
+                    </p></section>
+                    
+    <section id="section-2">
+        <h2>Design and Build of Dual Promoter</h2>
+
+    <h2>Design</h2>
+    <p>
+        The objective of the fragment design was to develop plasmids and homologous recombination (HR) inserts for the quantification and evaluation of the production of Green Fluorescent Protein (GFP), establishing a correlation with the production of Iturin A. The HR fragments were designed with homologous flanks of length 350-500 bp to replace the natural promoter with our promoter and GFP. Phase-respective GFP production was to be quantified to show the improvement in transcription rates compared to the natural promoter.
+    </p>
+
+    <h2>Build</h2>
+    <p>
+        Fragments were optimized in SnapGene to create synthesizable fragments.
+    </p>
+    <p>
+        Studies suggested that the sequences in the -35 and -10 regions are core promoter regions where the sigma factor-RNAP complex is located. The replacement of these regions with the consensus sequence suggested that there would be an increase in transcription rates <span class="reference">[9][3]</span>.
+    </p>
+    <p>
+        While analyzing the synthesis success rate using Salis Labs’ De Novo Synthesis Success Calculator, the synthesis score found on IDT was too high to be synthesized <span class="reference">[7]</span>. There was a high number of repeats in a 91 bp window in the location –80 to -171 of the PbacA promoter, which showed a high score in complexities when compared to a hairpin stem and another region with a lesser number of repeats. Hence, to improve our synthesis score, we deleted those 91 base pairs. While upstream regions of the promoter are important in determining the strength of the promoter, we found that the upstream region beyond –80 has little effect on promoter strength <span class="reference">[2]</span>.
+    </p>
+
+    <h2>Test</h2>
+    <p>
+        To test the dual promoter’s expression level, we plan to evaluate it against its component promoters, PbacA and P43, as well as the natural promoter, Pitu, of the chassis in expression plasmids. We will quantify and compare the expression rates of the reporter gene, Green Fluorescent Protein (GFP), for each of the promoters.
+    </p>
+    <p>
+        We aim to express the promoter in two different chassis, <em>Escherichia coli</em> and <em>Bacillus subtilis</em>, using the plasmids pET22b+ and pCFPbglS, respectively <span class="reference">[11]</span>.
+    </p>
+    <p>
+        We expect the dual promoter to show a higher expression level compared to the natural promoter, Pitu. It should also exceed the expression levels of the individual promoters, PbacA and P43, demonstrating additive or multiplicative expression.
+    </p>
+    <p>
+        The optimized and unoptimized fragments were docked to their respective sigma factors and RNAP complex. There was an increase in stability for the SigB binding affinity, but the same was not noticed for SigA binding affinities.
+    </p>
+    <p>
+        
+    </p>
+
+    <h2>Learn</h2>
+    <p>
+        From the results, we concluded that the optimization for P43 is not effective, while the optimization of PbacA was effective and necessary for the functionality of our dual promoter.
+    </p>
+    <p>
+        P43 unoptimized showed better binding affinity compared to P43 optimized with sigma A and sigma B. P43 optimized shows more binding affinity towards sigma B. The PbacA optimized core regions show better binding affinity towards sigma factor B.
+    </p>
+    <p>
+        The binding affinity of PbacA optimized was better than that of P43 unoptimized and P43 optimized, while PbacA unoptimized had a lesser binding affinity compared to P43 unoptimized with sigma factor B.
+    </p>
+    <p>
+        The promoters produced expected results according to the literature, but the predicted increase still needed improvements.
+    </p>
+    <p>
+        The optimized fragments did not show promise during in-silico studies, leading us to opt out of placing orders. Although there could be an increase in the production rate and GFP expression, it might be negligible enough to omit.
+    </p>
+    <p>
+        Once the insertion of fragments into <em>E. coli</em> and <em>B. subtilis</em> is complete, the Iturin produced needs to be analyzed and quantified to check our proof of concept. Hence, the team worked on standardizing and preparing protocols for HPLC analysis of Iturin production.
+    </p>
+    </section>
+    <section id="section-3">
+        <h2>HPLC Method Development for Iturin A Separation</h2>
+
+    <h2>Design Phase</h2>
+    <p>
+        <strong>Objective:</strong> Create protocols for HPLC operation and method file development for Iturin A separation.
+    </p>
+    <p>
+        <strong>HPLC Conditions:</strong> Maintained pressure and optimal temperature at 25°C throughout the runs. After washing the column, adequate time was allowed for pressure stabilization before commencing runs.
+    </p>
+    <p>
+        <strong>Purity Assurance:</strong> Utilized HPLC-grade solvents for mobile phases to ensure high purity and quality, essential for accurate results.
+    </p>
+    <p>
+        <strong>Sample Preparation:</strong> Conducted reverse-phase HPLC to optimize Iturin A elution, strictly adhering to operational protocols, including system purging and solvent degassing.
+    </p>
+    <p>
+        <strong>Molecular Studies:</strong> Performed preliminary studies to confirm that Iturin A would not clog the column, preventing system blockages.
+    </p>
+
+    <h2>Build Phase</h2>
+    <p>
+        <strong>Objective:</strong> Systematically set up various HPLC conditions to test solvent concentrations for Iturin A separation.
+    </p>
+    <p>
+        <strong>Initial Solvent Ratios:</strong> Established baseline ratios from literature surveys, using combinations of acetonitrile (ACN), water, and methanol <span class="reference">[10], [11], [14]</span>.
+    </p>
+    <p>
+        <strong>System Preparation:</strong> Purged and degassed mobile phases to eliminate air bubbles affecting pressure stability.
+    </p>
+    <p>
+        <strong>Trial Runs:</strong> Tested multiple solvent combinations; initial ratios (60:40 ACN:water) yielded faint peaks. Shifted focus to methanol due to better solubility of Iturin A <span class="reference">[14]</span>.
+    </p>
+
+    <h2>Test Phase</h2>
+    <p>
+        <strong>Objective:</strong> Optimize Iturin A separation through iterative testing of solvent composition.
+    </p>
+    <p>
+        <strong>Solvent Adjustments:</strong> Methanol was introduced in varying isocratic ratios (10-90% and 50-90%), but distinct peaks were still elusive.
+    </p>
+    <p>
+        <strong>Iterative Process:</strong> Continued testing with ACN and water combinations showed minimal peak formation, reinforcing the decision to utilize methanol as a primary solvent.
+    </p>
+
+    <h2>Learn Phase</h2>
+    <p>
+        <strong>Objective:</strong> Improve peak resolution through method adjustments.
+    </p>
+    <p>
+        <strong>Transition to Gradient Elution:</strong> Noted poor peak definition with isocratic runs; shifted to a gradient method for better resolution by varying solvent polarity over time</span>.
+    </p>
+    <p>
+        <strong>Gradient Optimization:</strong> Conducted gradient runs with ACN and water (40% to 80%), resulting in clear peaks corresponding to seven isoforms of Iturin A, significantly enhancing separation quality.
+    </p>
+
+    <h2>Finalization</h2>
+    <p>
+        <strong>Method File Creation:</strong> Established a comprehensive method file detailing optimal gradient conditions, flow rate, temperature, and pressure settings for consistent results in future Iturin A quantification.
+    </p>
+
+    </section>
+    <section id="section-4">
+    <h2>Quantification of Iturin A</h2>
+
+    <h2>Design Phase</h2>
+    <p>
+        <strong>Objective:</strong> Quantify Iturin A concentration in extracted samples using the standardized method file.
+    </p>
+    <p>
+        <strong>Standard Curve Development:</strong> Created using known concentrations of Iturin A to facilitate accurate measurements in experimental samples.
+    </p>
+
+    <h2>Build Phase</h2>
+    <p>
+        <strong>HPLC System Setup:</strong> Configured according to the new method file. Prepared standard Iturin A samples for calibration curve generation.
+    </p>
+
+    <h2>Test Phase</h2>
+    <p>
+        <strong>Sample Analysis:</strong> Compared extracted sample peaks against the standard calibration curve to calculate Iturin A concentrations accurately.
+    </p>
+
+    <h2>Learn Phase</h2>
+    <p>
+        <strong>Results Analysis:</strong> Confirmed method effectiveness for quantifying Iturin A. The standardized method file proved reliable, with noted adjustments for future experiments ensuring ongoing research integrity.
+    </p></section>
+                <section id="section-5">
+                    <h2>References</h2>
+                    
+                    <ol>
+                        <li>Montgomery VA, Cain E, Styczynski MP, Prausnitz MR. Bacillus subtilis engineered for topical delivery of an antifungal agent. <em>PLoS One</em>. 2023 Nov 30;18(11):e0293664. doi: <a href="https://doi.org/10.1371/journal.pone.0293664">10.1371/journal.pone.0293664</a>. PMID: 38032939; PMCID: PMC10688720.</li>
+                        <li>Li, Y.; Ma, X.; Zhang, L.; Ding, Z.; Xu, S.; Gu, Z.; Shi, G. Engineering of Bacillus Promoters Based on Interacting Motifs between UP Elements and RNA Polymerase (RNAP) α-Subunit. <em>Int. J. Mol. Sci.</em> 2022, 23, 13480. <a href="https://doi.org/10.3390/ijms232113480">https://doi.org/10.3390/ijms232113480</a></li>
+                        <li>Rao, Y., Cai, D., Wang, H., Xu, Y., Xiong, S., Gao, L., Xiong, M., Wang, Z., Chen, S., & Ma, X. (2020). Construction and application of a dual promoter system for efficient protein production and metabolic pathway enhancement in Bacillus licheniformis. <em>Journal of Biotechnology</em>, 312, 1-10. <a href="https://doi.org/10.1016/j.jbiotec.2020.02.015">https://doi.org/10.1016/j.jbiotec.2020.02.015</a></li>
+                        <li>Vahidinasab, M., Adiek, I., Hosseini, B., Akintayo, S. O., Abrishamchi, B., Pfannstiel, J., ... & Hausmann, R. (2022). Characterization of Bacillus velezensis UTB96, demonstrating improved lipopeptide production compared to the strain B. velezensis FZB42. <em>Microorganisms</em>, 10(11), 2225.</li>
+                        <li>Dang, Y., Zhao, F., Liu, X., Fan, X., Huang, R., Gao, W., ... & Yang, C. (2019). Enhanced production of antifungal lipopeptide iturin A by Bacillus amyloliquefaciens LL3 through metabolic engineering and culture conditions optimization. <em>Microbial Cell Factories</em>, 18, 1-14.</li>
+                        <li>Surette, M. G., & Elowitz, M. B. (2007). Programming gene expression with combinatorial promoters. <em>Molecular Systems Biology</em>, 3. <a href="https://doi.org/10.1038/msb4100187">https://doi.org/10.1038/msb4100187</a></li>
+                        <li>Milton, M. E., & Cavanagh, J. (2023). The Biofilm Regulatory Network from Bacillus subtilis: A Structure-Function Analysis. <em>Journal of Molecular Biology</em>, 435(3), 167923. <a href="https://doi.org/10.1016/j.jmb.2022.167923">https://doi.org/10.1016/j.jmb.2022.167923</a></li>
+                        <li>Banse, A. V., Chastanet, A., Hobbs, E. C., & Losick, R. (2008). Parallel pathways of repression and antirepression governing the transition to stationary phase in Bacillus subtilis. <em>Proceedings of the National Academy of Sciences</em>, 105(40), 15547-15552. <a href="https://doi.org/10.1073/pnas.0805203105">https://doi.org/10.1073/pnas.0805203105</a></li>
+                        <li>Kiryu, H., Oshima, T., & Asai, K. (2005). Extracting relations between promoter sequences and their strengths from microarray data. <em>Bioinformatics (Oxford, England)</em>, 21(7), 1062–1068. <a href="https://doi.org/10.1093/bioinformatics/bti094">https://doi.org/10.1093/bioinformatics/bti094</a></li>
+                        <li>Yuan, J., Raza, W., Huang, Q., & Shen, Q. (2011). Quantification of the antifungal lipopeptide iturin A by high performance liquid chromatography coupled with aqueous two-phase extraction. <em>Journal of Chromatography B</em>, 879(26), 2746–2750. <a href="https://doi.org/10.1016/j.jchromb.2011.07.041">https://doi.org/10.1016/j.jchromb.2011.07.041</a></li>
+                        <li>Yokota, K., Yatsuda, M., Miwa, E., & Higuchi, K. (2012). Comparative study on sample preparation methods for the HPLC quantification of iturin from culture supernatant of an antagonistic Bacillus strain. <em>[Online]. Available:</em> <a href="https://cabidigitallibrary.org">https://cabidigitallibrary.org</a></li>
+                        <li>Vater, J., Kablitz, B., Wilde, C., Franke, P., Mehta, N., & Cameotra, S. S. (2002). Matrix-Assisted Laser Desorption Ionization-Time of Flight Mass Spectrometry of Lipopeptide Biosurfactants in Whole Cells and Culture Filtrates of Bacillus subtilis C-1 Isolated from Petroleum Sludge. <em>Applied and Environmental Microbiology</em>, 68(12), 6210–6219. <a href="https://doi.org/10.1128/AEM.68.12.6210-6219.2002">https://doi.org/10.1128/AEM.68.12.6210-6219.2002</a></li>
+                        <li>Hsieh, F.-C., Lin, T.-C., Meng, M., & Kao, S.-S. (2008). Comparing methods for identifying Bacillus strains capable of producing the antifungal lipopeptide iturin A. <em>Current Microbiology</em>, 56(1), 1–5. <a href="https://doi.org/10.1007/s00284-007-9003-x">https://doi.org/10.1007/s00284-007-9003-x</a></li>
+                        <li>Malfanova, N., Franzil, L., Lugtenberg, B., Chebotar, V., & Ongena, M. (2012). Cyclic lipopeptide profile of the plant-beneficial endophytic bacterium Bacillus subtilis HC8. <em>Archives of Microbiology</em>, 194(11), 893–899. <a href="https://doi.org/10.1007/s00203-012-0823-0">https://doi.org/10.1007/s00203-012-0823-0</a></li>
+                    </ol>                    
+                </section>
+            </div>
+        </div>
+                    
+    </main>
+    <footer class="myFooter">
+        <div class="footer-content">
+            <div class="footer-section sponsors">
+                <h2 style="color: #213129;font-size: 6vh;margin: 0;padding-bottom: 1vh;font-family: 'Titan One', cursive;">Sponsors</h2>
+                <div class="sponsors-grid" style="padding-left: 5vw;">
+                    <img class="grid-item" style="height:11vh; width: auto; padding-left: 1vw;" src="https://static.igem.wiki/teams/5141/images/topleft.webp" alt="Sponsor 1">
+                    <img class="grid-item" style="height:10vh; width: auto;padding-right: 3vw;padding-top: 2vh;" src="https://static.igem.wiki/teams/5141/images/manipal.webp" alt="Sponsor 2">
+                    <img class="grid-item" style="height:7vh; width: auto;padding-left: 3vw;padding-top: 2vh;" src="https://static.igem.wiki/teams/5141/images/right-bottom.webp" alt="Sponsor 3">
+                    <img class="grid-item" style="height:4vh; width: auto;padding-top: 4vh;padding-right: 0vw;padding-left: 2vw;" src="https://static.igem.wiki/teams/5141/images/left-bottom.webp" alt="Sponsor 4">
+                    <img class="grid-item" style="height:6vh; width: auto;padding-top: 2.5vh;padding-right: 1vw;padding-left: 1vw;" src="https://static.igem.wiki/teams/5141/images/images-removebg-preview.webp" alt="Sponsor 4">
+                </div>
+            </div>
+            <div class="footer-divider"></div>
+            <div class="footer-section contact" style="color: #213129;margin-left: 5vw;">
+                <h2 style="font-size: 6vh;margin-bottom: 0;font-family: 'Titan One', cursive;">Contact Us</h2>
+                <div style="display: flex; justify-content: space-between; align-items: center;margin-left: 1vw;">
+                    <div style="width: 20vw;">
+                        <p style="font-size: 1.8vh;margin-top: 0;"><strong>Email:</strong> manipalbiomachines.igem@gmail.com</p>
+                        <p style="font-size: 1.8vh;"><strong>Address:</strong> <br>Project laboratory, Academic Block-2, Manipal Institute of Technology, MAHE, Eshwar Nagar, Manipal, Udupi, Karnataka, India - 576104 </p>
+                    </div>
+                </div>
+            </div>
+            <img style="width: 15vw; height: auto;margin-right: 7vw;" src="https://static.igem.wiki/teams/5141/images/igem-mit-mahe-logo.webp" alt="iGEM MIT">
+
+        </div>
+        <div class="last-one">
+            &copy; 2024- Content on this site is licensed under a Creative Commons Attribution 4.0 International license.
+        </div>
+    </footer>
+</body>
+</html>
