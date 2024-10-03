@@ -286,7 +286,7 @@
         canvas.width = window.innerWidth;
         canvas.height = window.innerHeight;
 
-        const basePath = 'temp/PNG_0';
+        const basePath = 'https://static.igem.wiki/teams/5141/home-page/png-';
     const numberOfImages = 593;  //change depending on the video 
     const imagePaths = [];
 
@@ -315,7 +315,7 @@
     }
 
     for (let i = 1; i <= numberOfImages; i++) {
-        const formattedNumber = formatNumber(i, 3);
+        const formattedNumber = i
         const imagePath = `${basePath}${formattedNumber}.png`; //merging base path with the number and extention
         imagePaths.push(imagePath); //appending to array
     }
